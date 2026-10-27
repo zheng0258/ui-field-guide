@@ -1,0 +1,35 @@
+id: slider
+kind: component
+name: { en: Slider, zh: 滑桿 }
+aliases: [range, range slider, scrubber, 拉桿, 滑動條]
+describe:
+  - 拖動圓點在一條線上調整數值
+  - 調音量、亮度那種橫條
+category: value-input
+confusedWith: [stepper]
+platforms:
+  macos:
+    name: Slider
+    api: { appkit: NSSlider, swiftui: Slider }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/sliders
+    states: [default, dragging, focus, disabled]
+    sizes: [mini, small, regular]
+  ios:
+    name: Slider
+    api: { uikit: UISlider, swiftui: Slider }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/sliders
+  android:
+    name: Slider
+    api: { compose: Slider, view: com.google.android.material.slider.Slider }
+    guideline: https://m3.material.io/components/sliders/overview
+  web:
+    name: Range input
+    api: { html: '<input type="range">', aria: slider }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/slider/
+prompt:
+  keywords: [slider, NSSlider, SwiftUI Slider]
+  descriptors: [horizontal track, draggable round knob, filled portion uses accent color]
+  avoid: [stepper]
+  coding: null
+  image: null
+status: draft

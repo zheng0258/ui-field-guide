@@ -1,0 +1,30 @@
+id: combobox
+kind: component
+name: { en: Combo box, zh: 組合框 }
+aliases: [autocomplete, typeahead, editable dropdown, 自動完成, 可輸入下拉]
+describe:
+  - 可以打字也可以從清單挑的輸入框
+  - 邊打字邊跳出建議選項
+category: selection
+confusedWith: [popup-select, search-field]
+platforms:
+  macos:
+    name: Combo box
+    api: { appkit: NSComboBox }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/combo-boxes
+    states: [default, focus, expanded, disabled]
+  android:
+    name: Exposed dropdown menu (editable)
+    api: { compose: 'ExposedDropdownMenuBox + TextField', view: MaterialAutoCompleteTextView }
+    guideline: https://m3.material.io/components/menus/overview
+  web:
+    name: Combobox
+    api: { html: '<input list> + <datalist>', aria: combobox }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+prompt:
+  keywords: [combo box, NSComboBox, autocomplete text field]
+  descriptors: [editable text field, dropdown arrow, suggestion list]
+  avoid: [popup-select]
+  coding: null
+  image: null
+status: draft

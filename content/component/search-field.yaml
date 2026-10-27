@@ -1,0 +1,35 @@
+id: search-field
+kind: component
+name: { en: Search field, zh: 搜尋欄 }
+aliases: [search bar, search box, 搜尋框]
+describe:
+  - 前面有放大鏡圖示、可以打字搜尋的欄位
+  - 打字後右邊會出現清除按鈕
+category: text-input
+confusedWith: [combobox]
+platforms:
+  macos:
+    name: Search field
+    api: { appkit: NSSearchField, swiftui: '.searchable' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/search-fields
+    states: [empty, focus, filled, disabled]
+    sizes: [mini, small, regular, large]
+  ios:
+    name: Search field
+    api: { uikit: 'UISearchController / UISearchBar', swiftui: '.searchable' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/search-fields
+  android:
+    name: Search bar
+    api: { compose: SearchBar, view: com.google.android.material.search.SearchBar }
+    guideline: https://m3.material.io/components/search/overview
+  web:
+    name: Search input
+    api: { html: '<input type="search"> in <search>', aria: 'searchbox + search landmark' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/search.html
+prompt:
+  keywords: [search field, NSSearchField, SwiftUI searchable]
+  descriptors: [magnifying glass icon, rounded text field, clear button when filled]
+  avoid: []
+  coding: null
+  image: null
+status: draft

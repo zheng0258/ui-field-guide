@@ -1,0 +1,34 @@
+id: button
+kind: component
+name: { en: Button, zh: 按鈕 }
+aliases: [push button, action button, CTA, 按鍵]
+describe:
+  - 按一下就執行一個動作
+category: actions
+confusedWith: [pull-down-menu]
+platforms:
+  macos:
+    name: Push button
+    api: { appkit: 'NSButton (bezelStyle .push)', swiftui: Button }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/buttons
+    states: [default, hover, pressed, focus, disabled]
+    sizes: [mini, small, regular, large]
+  ios:
+    name: Button
+    api: { uikit: UIButton, swiftui: Button }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/buttons
+  android:
+    name: Button
+    api: { compose: 'Button / OutlinedButton / TextButton', view: MaterialButton }
+    guideline: https://m3.material.io/components/buttons/overview
+  web:
+    name: Button
+    api: { html: '<button>', aria: button }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/button/
+prompt:
+  keywords: [push button, NSButton, SwiftUI Button]
+  descriptors: [rounded rect bezel, single action, default button uses accent color]
+  avoid: []
+  coding: null
+  image: null
+status: draft

@@ -1,0 +1,7 @@
+dist
+.vite-ssg-temp
+pnpm-lock.yaml
+src/tokens/*.css
+tools/measure-macos/output
+tools/measure-macos/.build
+docs

@@ -1,0 +1,34 @@
+id: pull-down-menu
+kind: component
+name: { en: Pull-down menu, zh: 下拉式動作選單 }
+aliases: [menu button, dropdown menu, actions menu, 更多選單, 動作選單]
+describe:
+  - 按鈕點開是一串動作，按鈕上的字不會變
+  - 「更多」按鈕點開的指令清單
+category: menus
+confusedWith: [popup-select, context-menu]
+platforms:
+  macos:
+    name: Pull-down button
+    api: { appkit: 'NSPopUpButton (pullsDown = true)', swiftui: Menu }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons
+    states: [default, hover, pressed, focus, disabled]
+  ios:
+    name: Pull-down button
+    api: { uikit: 'UIButton (menu + showsMenuAsPrimaryAction)', swiftui: Menu }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons
+  android:
+    name: Dropdown menu
+    api: { compose: DropdownMenu, view: PopupMenu }
+    guideline: https://m3.material.io/components/menus/overview
+  web:
+    name: Menu button
+    api: { html: '<button> + popover', aria: 'button[aria-haspopup=menu] + menu' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
+prompt:
+  keywords: [pull-down button, menu button, SwiftUI Menu]
+  descriptors: [button label stays fixed, opens a list of commands, chevron down]
+  avoid: [popup-select]
+  coding: null
+  image: null
+status: draft

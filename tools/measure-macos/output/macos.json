@@ -1,0 +1,358 @@
+{
+  "colors" : {
+    "alternate-selected-control-text" : {
+      "dark" : "#ffffff",
+      "light" : "#ffffff"
+    },
+    "control" : {
+      "dark" : "#ffffff3f",
+      "light" : "#ffffff"
+    },
+    "control-accent" : {
+      "dark" : "#007aff",
+      "light" : "#007aff"
+    },
+    "control-background" : {
+      "dark" : "#1e1e1e",
+      "light" : "#ffffff"
+    },
+    "control-text" : {
+      "dark" : "#ffffffd8",
+      "light" : "#000000d8"
+    },
+    "disabled-control-text" : {
+      "dark" : "#ffffff3f",
+      "light" : "#0000003f"
+    },
+    "find-highlight" : {
+      "dark" : "#ffff00",
+      "light" : "#ffff00"
+    },
+    "grid" : {
+      "dark" : "#1a1a1a",
+      "light" : "#e6e6e6"
+    },
+    "header-text" : {
+      "dark" : "#ffffff",
+      "light" : "#000000d8"
+    },
+    "keyboard-focus-indicator" : {
+      "dark" : "#1aa9ff7f",
+      "light" : "#0067f47f"
+    },
+    "label" : {
+      "dark" : "#ffffffd8",
+      "light" : "#000000d8"
+    },
+    "link" : {
+      "dark" : "#419cff",
+      "light" : "#0068da"
+    },
+    "placeholder-text" : {
+      "dark" : "#ffffff8c",
+      "light" : "#0000007f"
+    },
+    "quaternary-label" : {
+      "dark" : "#ffffff19",
+      "light" : "#00000019"
+    },
+    "secondary-label" : {
+      "dark" : "#ffffff8c",
+      "light" : "#0000007f"
+    },
+    "selected-content-background" : {
+      "dark" : "#0059d1",
+      "light" : "#0064e1"
+    },
+    "selected-text" : {
+      "dark" : "#ffffff",
+      "light" : "#000000"
+    },
+    "selected-text-background" : {
+      "dark" : "#3f638b",
+      "light" : "#b3d7ff"
+    },
+    "separator" : {
+      "dark" : "#ffffff19",
+      "light" : "#00000019"
+    },
+    "system-blue" : {
+      "dark" : "#0091ff",
+      "light" : "#0088ff"
+    },
+    "system-brown" : {
+      "dark" : "#b78a66",
+      "light" : "#ac7f5e"
+    },
+    "system-cyan" : {
+      "dark" : "#3cd3fe",
+      "light" : "#00c0e8"
+    },
+    "system-gray" : {
+      "dark" : "#98989d",
+      "light" : "#8e8e93"
+    },
+    "system-green" : {
+      "dark" : "#30d158",
+      "light" : "#34c759"
+    },
+    "system-indigo" : {
+      "dark" : "#6d7cff",
+      "light" : "#6155f5"
+    },
+    "system-mint" : {
+      "dark" : "#00dac3",
+      "light" : "#00c8b3"
+    },
+    "system-orange" : {
+      "dark" : "#ff9230",
+      "light" : "#ff8d28"
+    },
+    "system-pink" : {
+      "dark" : "#ff375f",
+      "light" : "#ff2d55"
+    },
+    "system-purple" : {
+      "dark" : "#db34f2",
+      "light" : "#cb30e0"
+    },
+    "system-red" : {
+      "dark" : "#ff4245",
+      "light" : "#ff383c"
+    },
+    "system-teal" : {
+      "dark" : "#00d2e0",
+      "light" : "#00c3d0"
+    },
+    "system-yellow" : {
+      "dark" : "#ffd600",
+      "light" : "#ffcc00"
+    },
+    "tertiary-label" : {
+      "dark" : "#ffffff3f",
+      "light" : "#00000042"
+    },
+    "text" : {
+      "dark" : "#ffffff",
+      "light" : "#000000"
+    },
+    "text-background" : {
+      "dark" : "#1e1e1e",
+      "light" : "#ffffff"
+    },
+    "under-page-background" : {
+      "dark" : "#282828",
+      "light" : "#969696e5"
+    },
+    "unemphasized-selected-content-background" : {
+      "dark" : "#464646",
+      "light" : "#dcdcdc"
+    },
+    "window-background" : {
+      "dark" : "#1e1e1e",
+      "light" : "#ffffff"
+    }
+  },
+  "controls" : {
+    "checkbox" : {
+      "large" : {
+        "height" : 18,
+        "width" : 63
+      },
+      "mini" : {
+        "height" : 12,
+        "width" : 44
+      },
+      "regular" : {
+        "height" : 16,
+        "width" : 61
+      },
+      "small" : {
+        "height" : 14,
+        "width" : 52
+      }
+    },
+    "combo-box" : {
+      "large" : {
+        "height" : 28,
+        "width" : 0
+      },
+      "mini" : {
+        "height" : 16,
+        "width" : 0
+      },
+      "regular" : {
+        "height" : 24,
+        "width" : 0
+      },
+      "small" : {
+        "height" : 20,
+        "width" : 0
+      }
+    },
+    "pop-up-button" : {
+      "large" : {
+        "height" : 28,
+        "width" : 97
+      },
+      "mini" : {
+        "height" : 16,
+        "width" : 62
+      },
+      "regular" : {
+        "height" : 24,
+        "width" : 89
+      },
+      "small" : {
+        "height" : 20,
+        "width" : 76
+      }
+    },
+    "pull-down-button" : {
+      "large" : {
+        "height" : 28,
+        "width" : 102
+      },
+      "mini" : {
+        "height" : 16,
+        "width" : 65
+      },
+      "regular" : {
+        "height" : 24,
+        "width" : 94
+      },
+      "small" : {
+        "height" : 20,
+        "width" : 80
+      }
+    },
+    "push-button" : {
+      "large" : {
+        "height" : 28,
+        "width" : 69
+      },
+      "mini" : {
+        "height" : 16,
+        "width" : 46
+      },
+      "regular" : {
+        "height" : 24,
+        "width" : 65
+      },
+      "small" : {
+        "height" : 20,
+        "width" : 55
+      }
+    },
+    "search-field" : {
+      "large" : {
+        "height" : 28,
+        "width" : 0
+      },
+      "mini" : {
+        "height" : 16,
+        "width" : 0
+      },
+      "regular" : {
+        "height" : 24,
+        "width" : 0
+      },
+      "small" : {
+        "height" : 20,
+        "width" : 0
+      }
+    },
+    "segmented-control" : {
+      "large" : {
+        "height" : 28,
+        "width" : 160
+      },
+      "mini" : {
+        "height" : 16,
+        "width" : 106
+      },
+      "regular" : {
+        "height" : 24,
+        "width" : 148
+      },
+      "small" : {
+        "height" : 20,
+        "width" : 131
+      }
+    },
+    "slider" : {
+      "large" : {
+        "height" : 20,
+        "width" : 0
+      },
+      "mini" : {
+        "height" : 12,
+        "width" : 0
+      },
+      "regular" : {
+        "height" : 16,
+        "width" : 0
+      },
+      "small" : {
+        "height" : 14,
+        "width" : 0
+      }
+    },
+    "stepper" : {
+      "large" : {
+        "height" : 30,
+        "width" : 23
+      },
+      "mini" : {
+        "height" : 20,
+        "width" : 13
+      },
+      "regular" : {
+        "height" : 26,
+        "width" : 20
+      },
+      "small" : {
+        "height" : 22,
+        "width" : 17
+      }
+    },
+    "switch" : {
+      "large" : {
+        "height" : 24,
+        "width" : 54
+      },
+      "mini" : {
+        "height" : 24,
+        "width" : 54
+      },
+      "regular" : {
+        "height" : 24,
+        "width" : 54
+      },
+      "small" : {
+        "height" : 24,
+        "width" : 54
+      }
+    },
+    "text-field" : {
+      "large" : {
+        "height" : 24,
+        "width" : 0
+      },
+      "mini" : {
+        "height" : 19,
+        "width" : 0
+      },
+      "regular" : {
+        "height" : 24,
+        "width" : 0
+      },
+      "small" : {
+        "height" : 22,
+        "width" : 0
+      }
+    }
+  },
+  "generator" : "tools\/measure-macos",
+  "macOS" : "26.7.1"
+}

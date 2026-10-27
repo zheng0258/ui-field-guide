@@ -1,0 +1,34 @@
+id: segmented-control
+kind: component
+name: { en: Segmented control, zh: 分段控制 }
+aliases: [segmented button, button group, toggle group, 分段按鈕]
+describe:
+  - 幾顆並排黏在一起的按鈕，一次選一個
+  - 一條橫向膠囊切成好幾格，選中的那格會反白
+category: selection
+confusedWith: [popup-select, toggle-switch]
+platforms:
+  macos:
+    name: Segmented control
+    api: { appkit: NSSegmentedControl, swiftui: 'Picker(.segmented)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/segmented-controls
+    states: [default, selected, pressed, focus, disabled]
+  ios:
+    name: Segmented control
+    api: { uikit: UISegmentedControl, swiftui: 'Picker(.segmented)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/segmented-controls
+  android:
+    name: Segmented button
+    api: { compose: SingleChoiceSegmentedButtonRow, view: MaterialButtonToggleGroup }
+    guideline: https://m3.material.io/components/segmented-buttons/overview
+  web:
+    name: Radio group
+    api: { html: '<fieldset> + <input type="radio">', aria: radiogroup }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/radio/
+prompt:
+  keywords: [segmented control, NSSegmentedControl, SwiftUI Picker segmented style]
+  descriptors: [joined segments, one selected segment highlighted]
+  avoid: [toggle-switch]
+  coding: null
+  image: null
+status: draft

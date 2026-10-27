@@ -1,0 +1,35 @@
+id: toggle-switch
+kind: component
+name: { en: Switch, zh: 開關 }
+aliases: [toggle, on/off switch, 切換開關, 撥動開關]
+describe:
+  - 左右撥動的開關，切換開或關
+  - 一個膠囊形狀，裡面圓點會滑到另一邊
+category: selection
+confusedWith: [segmented-control]
+platforms:
+  macos:
+    name: Switch
+    api: { appkit: NSSwitch, swiftui: 'Toggle(.switch)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/toggles
+    states: [off, on, focus, disabled]
+    sizes: [mini, small, regular]
+  ios:
+    name: Switch
+    api: { uikit: UISwitch, swiftui: Toggle }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/toggles
+  android:
+    name: Switch
+    api: { compose: Switch, view: MaterialSwitch }
+    guideline: https://m3.material.io/components/switch/overview
+  web:
+    name: Switch
+    api: { html: '<input type="checkbox" switch>', aria: switch }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/switch/
+prompt:
+  keywords: [toggle switch, NSSwitch, SwiftUI Toggle switch style]
+  descriptors: [pill-shaped track, sliding knob, takes effect immediately]
+  avoid: []
+  coding: null
+  image: null
+status: draft

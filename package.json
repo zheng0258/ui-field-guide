@@ -1,0 +1,50 @@
+{
+  "name": "ui-field-guide",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Cross-platform UI component field guide. Spot it, name it, prompt it.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite-ssg build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:visual": "echo \"visual regression lands in phase 1\"",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
+    "content:check": "tsx scripts/content-check.ts",
+    "tokens:measure": "swift run --package-path tools/measure-macos measure-macos > tools/measure-macos/output/macos.json",
+    "tokens:build": "tsx scripts/build-tokens.ts"
+  },
+  "dependencies": {
+    "fuse.js": "7.5.0",
+    "vue": "3.5.44",
+    "vue-router": "5.4.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "@types/node": "24.19.2",
+    "@unhead/vue": "2.1.17",
+    "@vitejs/plugin-vue": "6.0.10",
+    "@vue/eslint-config-typescript": "14.9.0",
+    "eslint": "10.13.0",
+    "eslint-plugin-vue": "10.12.0",
+    "jiti": "^2.7.0",
+    "prettier": "3.9.10",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vite": "8.3.5",
+    "vite-ssg": "28.3.0",
+    "vitest": "5.0.5",
+    "vue-tsc": "3.3.13",
+    "yaml": "2.9.1",
+    "zod": "4.6.7"
+  }
+}

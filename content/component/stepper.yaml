@@ -1,0 +1,31 @@
+id: stepper
+kind: component
+name: { en: Stepper, zh: 步進器 }
+aliases: [spin button, number spinner, increment decrement, 加減按鈕]
+describe:
+  - 一組加和減的小按鈕，一次調一格
+  - 上下兩個小箭頭，旁邊通常有數字欄
+category: value-input
+confusedWith: [slider]
+platforms:
+  macos:
+    name: Stepper
+    api: { appkit: NSStepper, swiftui: Stepper }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/steppers
+    states: [default, pressed, focus, disabled]
+    sizes: [mini, small, regular]
+  ios:
+    name: Stepper
+    api: { uikit: UIStepper, swiftui: Stepper }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/steppers
+  web:
+    name: Spinbutton
+    api: { html: '<input type="number">', aria: spinbutton }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/
+prompt:
+  keywords: [stepper, NSStepper, SwiftUI Stepper]
+  descriptors: [small up and down arrows, paired with a number field, discrete increments]
+  avoid: [slider]
+  coding: null
+  image: null
+status: draft

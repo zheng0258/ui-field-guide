@@ -1,0 +1,54 @@
+name: Deploy
+
+# main → gh-pages root (verified concepts only).
+# Pull requests → gh-pages/pr-preview/pr-<n>/ (drafts included), removed when the PR closes.
+# Repo setting required once: Pages → Build and deployment → Deploy from branch → gh-pages / (root).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  REPO_BASE: /${{ github.event.repository.name }}/
+
+jobs:
+  production:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+      - run: pnpm build
+        env:
+          BASE_PATH: ${{ env.REPO_BASE }}
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          clean-exclude: pr-preview/
+
+  preview:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - if: github.event.action != 'closed'
+        uses: ./.github/actions/setup
+      - if: github.event.action != 'closed'
+        run: pnpm build
+        env:
+          BASE_PATH: ${{ env.REPO_BASE }}pr-preview/pr-${{ github.event.number }}/
+          INCLUDE_DRAFTS: '1'
+      - uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: dist

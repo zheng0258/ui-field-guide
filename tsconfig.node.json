@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2023"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": [
+    "vite.config.ts",
+    "vitest.config.ts",
+    "scripts/**/*.ts",
+    "tests/**/*.ts",
+    "src/content/fs.ts",
+    "src/content/validate.ts",
+    "src/schema/**/*.ts",
+    "src/search.ts",
+    "src/prompt.ts",
+    "eslint.config.ts"
+  ]
+}
