@@ -1,4 +1,1106 @@
-var e=Object.assign({"./ios/action-sheet.html":`<button type="button" class="btn" data-open="ios-actionsheet">清除歷史記錄…</button>
+var e=Object.assign({"./android/alert-dialog.html":`<button type="button" class="btn btn-tonal" data-open="and-alert">刪除對話</button>
+<dialog id="and-alert" class="dialog" role="alertdialog" aria-labelledby="and-alert-title">
+  <h3 id="and-alert-title">要刪除這則對話嗎？</h3>
+  <p class="muted">刪除後無法復原。</p>
+  <div class="actions">
+    <button type="button" class="btn btn-text" data-close autofocus>取消</button
+    ><button type="button" class="btn btn-text" data-close>刪除</button>
+  </div>
+</dialog>
+`,"./android/alert-dialog.thumb.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="dialog">
+    <h3>要刪除這則對話嗎？</h3>
+    <p class="muted">刪除後無法復原。</p>
+    <div class="actions">
+      <button type="button" class="btn btn-text">取消</button><button type="button" class="btn btn-text">刪除</button>
+    </div>
+  </div>
+</div>
+`,"./android/badge.html":`<div class="row" role="group" aria-label="篩選">
+  <label class="chip"><input class="chip-input" type="checkbox" checked /> 未讀</label>
+  <label class="chip"><input class="chip-input" type="checkbox" /> 有附件</label>
+  <label class="chip"><input class="chip-input" type="checkbox" /> 已加星號</label>
+</div>
+`,"./android/bottom-navigation.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <div class="content muted">首頁內容</div>
+  <nav class="navbar" aria-label="主要導覽">
+    <a href="#and-nav" aria-current="page"
+      ><span class="indicator"
+        ><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M4 11 12 4l8 7M6.5 9v11h11V9" /></svg></span
+      >首頁</a
+    >
+    <a href="#and-nav"
+      ><span class="indicator"
+        ><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="10.5" cy="10.5" r="6.5" />
+          <path d="m20 20-4.8-4.8" /></svg></span
+      >探索</a
+    >
+    <a href="#and-nav"
+      ><span class="indicator"
+        ><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z" /></svg></span
+      >收藏</a
+    >
+    <a href="#and-nav"
+      ><span class="indicator"
+        ><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 20.5c1.2-4 4.3-6 8-6s6.8 2 8 6" /></svg></span
+      >個人</a
+    >
+  </nav>
+</div>
+`,"./android/bottom-sheet.html":`<button type="button" class="btn btn-tonal" data-open="and-sheet">相片選項</button>
+<dialog id="and-sheet" class="sheet" aria-labelledby="and-sheet-title">
+  <div class="handle" aria-hidden="true"></div>
+  <ul class="list" style="width: auto" aria-labelledby="and-sheet-title">
+    <li id="and-sheet-title" class="visually-hidden">相片選項</li>
+    <li>
+      <button
+        type="button"
+        class="list-item"
+        style="min-height: 56px; width: 100%; border: 0; background: none; font: inherit; color: inherit"
+        data-close
+      >
+        設為桌布
+      </button>
+    </li>
+    <li>
+      <button
+        type="button"
+        class="list-item"
+        style="min-height: 56px; width: 100%; border: 0; background: none; font: inherit; color: inherit"
+        data-close
+      >
+        加入相簿
+      </button>
+    </li>
+    <li>
+      <button
+        type="button"
+        class="list-item"
+        style="min-height: 56px; width: 100%; border: 0; background: none; font: inherit; color: inherit"
+        data-close
+      >
+        移到垃圾桶
+      </button>
+    </li>
+  </ul>
+</dialog>
+`,"./android/bottom-sheet.thumb.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="sheet">
+    <div class="handle" aria-hidden="true"></div>
+    <ul class="list" style="width: auto" aria-labelledby="and-sheet-title">
+      <li id="and-sheet-title" class="visually-hidden">相片選項</li>
+      <li>
+        <button
+          type="button"
+          class="list-item"
+          style="min-height: 56px; width: 100%; border: 0; background: none; font: inherit; color: inherit"
+        >
+          設為桌布
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="list-item"
+          style="min-height: 56px; width: 100%; border: 0; background: none; font: inherit; color: inherit"
+        >
+          加入相簿
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+          class="list-item"
+          style="min-height: 56px; width: 100%; border: 0; background: none; font: inherit; color: inherit"
+        >
+          移到垃圾桶
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`,"./android/button.html":`<div class="stack" style="justify-items: center">
+  <div class="row">
+    <button type="button" class="btn">Filled</button>
+    <button type="button" class="btn btn-tonal">Tonal</button>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-elevated">Elevated</button>
+    <button type="button" class="btn btn-outlined">Outlined</button>
+    <button type="button" class="btn btn-text">Text</button>
+  </div>
+</div>
+`,"./android/card.html":`<div class="stack">
+  <article class="card card-elevated">
+    <h3>週末市集</h3>
+    <p class="muted">週六 10:00 · 華山文創園區</p>
+    <div class="row">
+      <button type="button" class="btn btn-text">略過</button><button type="button" class="btn">報名</button>
+    </div>
+  </article>
+</div>
+`,"./android/carousel.html":`<div class="carousel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="精選相片">
+  <div class="carousel-item" role="group" aria-label="1 / 6"></div>
+  <div class="carousel-item" role="group" aria-label="2 / 6"></div>
+  <div class="carousel-item" role="group" aria-label="3 / 6"></div>
+  <div class="carousel-item" role="group" aria-label="4 / 6"></div>
+  <div class="carousel-item" role="group" aria-label="5 / 6"></div>
+  <div class="carousel-item" role="group" aria-label="6 / 6"></div>
+</div>
+`,"./android/checkbox.html":`<div>
+  <label class="check"><input type="checkbox" checked /> 接收電子報</label>
+  <label class="check"><input type="checkbox" /> 同意使用條款</label>
+</div>
+`,"./android/combobox.html":`<label class="tf tf-dropdown">
+  <input list="and-combo-list" placeholder=" " />
+  <span>國家或地區</span>
+  <span class="trailing"
+    ><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7 10h10l-5 5z" /></svg
+  ></span>
+</label>
+<datalist id="and-combo-list">
+  <option value="台灣"></option>
+  <option value="日本"></option>
+  <option value="韓國"></option>
+</datalist>
+`,"./android/context-menu.html":`<div tabindex="0" data-contextmenu="and-context" class="card card-outlined" style="text-align: center">
+  長按這則訊息
+  <p class="muted" style="font-size: 12px">（右鍵或 Shift+F10）</p>
+</div>
+<div id="and-context" popover role="menu" class="menu menu-floating">
+  <button type="button" role="menuitem">複製</button>
+  <button type="button" role="menuitem">回覆</button>
+  <button type="button" role="menuitem">轉寄</button>
+  <button type="button" role="menuitem">刪除</button>
+</div>
+`,"./android/context-menu.thumb.html":`<div class="stack" style="justify-items: start">
+  <div class="card card-outlined">長按這則訊息</div>
+  <div class="menu menu-static" style="margin: -24px 0 0 90px">
+    <button type="button" role="menuitem">複製</button>
+    <button type="button" role="menuitem">回覆</button>
+    <button type="button" role="menuitem">刪除</button>
+  </div>
+</div>
+`,"./android/date-picker.html":`<div class="datepicker">
+  <div class="datepicker-head">
+    <span id="and-month">2026 年 11 月</span>
+    <span class="row" style="gap: 0">
+      <button type="button" class="icon-btn" aria-label="上個月">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m15 6-6 6 6 6" />
+        </svg>
+      </button>
+      <button type="button" class="icon-btn" aria-label="下個月">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m9 6 6 6-6 6" />
+        </svg>
+      </button>
+    </span>
+  </div>
+  <fieldset class="days" aria-labelledby="and-month">
+    <span class="dow" aria-hidden="true">日</span>
+    <span class="dow" aria-hidden="true">一</span>
+    <span class="dow" aria-hidden="true">二</span>
+    <span class="dow" aria-hidden="true">三</span>
+    <span class="dow" aria-hidden="true">四</span>
+    <span class="dow" aria-hidden="true">五</span>
+    <span class="dow" aria-hidden="true">六</span>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 1 日" />1</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 2 日" />2</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 3 日" />3</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 4 日" />4</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 5 日" />5</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 6 日" />6</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 7 日" />7</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 8 日" />8</label>
+    <label class="today"><input class="day-input" type="radio" name="and-day" aria-label="11 月 9 日" />9</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 10 日" />10</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 11 日" />11</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 12 日" />12</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 13 日" />13</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 14 日" checked />14</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 15 日" />15</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 16 日" />16</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 17 日" />17</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 18 日" />18</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 19 日" />19</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 20 日" />20</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 21 日" />21</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 22 日" />22</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 23 日" />23</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 24 日" />24</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 25 日" />25</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 26 日" />26</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 27 日" />27</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 28 日" />28</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 29 日" />29</label>
+    <label><input class="day-input" type="radio" name="and-day" aria-label="11 月 30 日" />30</label>
+  </fieldset>
+</div>
+`,"./android/drawer.html":`<button type="button" class="btn btn-tonal" data-open="and-sidesheet">篩選</button>
+<dialog id="and-sidesheet" class="sidesheet" aria-labelledby="and-side-title">
+  <h3 id="and-side-title">篩選</h3>
+  <label class="check"><input type="checkbox" checked /> 有庫存</label>
+  <label class="check"><input type="checkbox" /> 免運費</label>
+  <div class="row" style="margin-top: 16px">
+    <button type="button" class="btn" data-close>套用</button
+    ><button type="button" class="btn btn-outlined" data-close>取消</button>
+  </div>
+</dialog>
+`,"./android/drawer.thumb.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="sidesheet">
+    <h3>篩選</h3>
+    <label class="check"><input type="checkbox" checked /> 有庫存</label>
+    <label class="check"><input type="checkbox" /> 免運費</label>
+  </div>
+</div>
+`,"./android/fab.html":`<div class="row" style="align-items: end">
+  <button type="button" class="fab" aria-label="撰寫">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 20h4L19 9l-4-4L4 16z" />
+    </svg>
+  </button>
+  <button type="button" class="fab">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 20h4L19 9l-4-4L4 16z" />
+    </svg>
+    撰寫
+  </button>
+  <button type="button" class="fab fab-large" aria-label="新增">
+    <svg
+      width="36"
+      height="36"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  </button>
+</div>
+`,"./android/icon-button.html":`<div class="row">
+  <button type="button" class="icon-btn" aria-label="編輯">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 20h4L19 9l-4-4L4 16z" />
+    </svg>
+  </button>
+  <button type="button" class="icon-btn icon-btn-filled" aria-label="新增">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  </button>
+  <button type="button" class="icon-btn icon-btn-tonal" aria-label="分享">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="18" cy="5.5" r="2.5" />
+      <circle cx="6" cy="12" r="2.5" />
+      <circle cx="18" cy="18.5" r="2.5" />
+      <path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4" />
+    </svg>
+  </button>
+  <button type="button" class="icon-btn icon-btn-outlined" aria-label="刪除">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 7h14M10 7V4.5h4V7M7 7l1 13h8l1-13" />
+    </svg>
+  </button>
+</div>
+`,"./android/modal-dialog.html":`<button type="button" class="btn" data-open="and-dialog">重設設定</button>
+<dialog id="and-dialog" class="dialog dialog-centered" aria-labelledby="and-dialog-title">
+  <div class="dialog-icon">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4" />
+    </svg>
+  </div>
+  <h3 id="and-dialog-title">重設設定？</h3>
+  <p class="muted">所有偏好設定會回到預設值，已下載的資料不受影響。</p>
+  <div class="actions">
+    <button type="button" class="btn btn-text" data-close>取消</button
+    ><button type="button" class="btn btn-text" data-close>重設</button>
+  </div>
+</dialog>
+`,"./android/modal-dialog.thumb.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="dialog dialog-centered">
+    <div class="dialog-icon">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4" />
+      </svg>
+    </div>
+    <h3>重設設定？</h3>
+    <p class="muted">所有偏好設定會回到預設值，已下載的資料不受影響。</p>
+    <div class="actions">
+      <button type="button" class="btn btn-text">取消</button><button type="button" class="btn btn-text">重設</button>
+    </div>
+  </div>
+</div>
+`,"./android/popover.html":`<button type="button" class="icon-btn" popovertarget="and-rich-tip" aria-label="關於自動備份">
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 11v6M12 7.5v.5" />
+  </svg>
+</button>
+<div id="and-rich-tip" popover class="rich-tooltip">
+  <strong>自動備份</strong>
+  連上 Wi‑Fi 且充電時，相片會自動備份到雲端。
+  <br /><button type="button" class="btn btn-text" popovertarget="and-rich-tip" popovertargetaction="hide">了解</button>
+</div>
+`,"./android/popover.thumb.html":`<div class="stack" style="justify-items: start; gap: 4px">
+  <span class="icon-btn"
+    ><svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 11v6M12 7.5v.5" /></svg
+  ></span>
+  <div class="rich-tooltip static"><strong>自動備份</strong>連上 Wi‑Fi 且充電時，相片會自動備份到雲端。</div>
+</div>
+`,"./android/popup-select.html":`<div class="tf tf-outlined tf-dropdown" style="anchor-name: --and-exposed">
+  <input id="and-exposed" readonly value="台北" placeholder=" " tabindex="-1" aria-hidden="true" />
+  <span>城市</span>
+  <span class="trailing"
+    ><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7 10h10l-5 5z" /></svg
+  ></span>
+  <button
+    type="button"
+    popovertarget="and-exposed-list"
+    aria-haspopup="listbox"
+    aria-label="城市：台北"
+    style="position: absolute; inset: 0; border: 0; border-radius: 4px; background: none; cursor: pointer"
+  ></button>
+</div>
+<div id="and-exposed-list" popover role="listbox" class="menu menu-dropdown" data-for="and-exposed" aria-label="城市">
+  <button type="button" role="option" aria-selected="true">台北</button>
+  <button type="button" role="option" aria-selected="false">台中</button>
+  <button type="button" role="option" aria-selected="false">高雄</button>
+</div>
+`,"./android/progress-indicator.html":`<div class="stack">
+  <span>正在上傳 3 張相片</span>
+  <div class="linear" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="上傳進度">
+    <span class="active" style="width: 60%"></span><span class="track"></span><span class="stop"></span>
+  </div>
+</div>
+`,"./android/pull-down-menu.html":`<button type="button" class="icon-btn" popovertarget="and-overflow" aria-haspopup="menu" aria-label="更多選項">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <circle cx="12" cy="5.5" r="2" />
+    <circle cx="12" cy="12" r="2" />
+    <circle cx="12" cy="18.5" r="2" />
+  </svg>
+</button>
+<div id="and-overflow" popover role="menu" class="menu">
+  <button type="button" role="menuitem">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 20h4L19 9l-4-4L4 16z" />
+    </svg>
+    編輯
+  </button>
+  <button type="button" role="menuitem">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="18" cy="5.5" r="2.5" />
+      <circle cx="6" cy="12" r="2.5" />
+      <circle cx="18" cy="18.5" r="2.5" />
+      <path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4" />
+    </svg>
+    分享
+  </button>
+  <hr />
+  <button type="button" role="menuitem">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 7h14M10 7V4.5h4V7M7 7l1 13h8l1-13" />
+    </svg>
+    刪除
+  </button>
+</div>
+`,"./android/pull-down-menu.thumb.html":`<div class="stack" style="justify-items: start; gap: 4px">
+  <span class="icon-btn"
+    ><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <circle cx="12" cy="5.5" r="2" />
+      <circle cx="12" cy="12" r="2" />
+      <circle cx="12" cy="18.5" r="2" /></svg
+  ></span>
+  <div class="menu menu-static">
+    <button type="button" role="menuitem">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M4 20h4L19 9l-4-4L4 16z" />
+      </svg>
+      編輯
+    </button>
+    <button type="button" role="menuitem">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="18" cy="5.5" r="2.5" />
+        <circle cx="6" cy="12" r="2.5" />
+        <circle cx="18" cy="18.5" r="2.5" />
+        <path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4" />
+      </svg>
+      分享
+    </button>
+    <hr />
+    <button type="button" role="menuitem">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M5 7h14M10 7V4.5h4V7M7 7l1 13h8l1-13" />
+      </svg>
+      刪除
+    </button>
+  </div>
+</div>
+`,"./android/radio-group.html":`<div role="radiogroup" aria-label="主題">
+  <label class="check"><input type="radio" name="and-theme" checked /> 跟隨系統</label>
+  <label class="check"><input type="radio" name="and-theme" /> 淺色</label>
+  <label class="check"><input type="radio" name="and-theme" /> 深色</label>
+</div>
+`,"./android/search-field.html":`<search class="searchbar">
+  <button type="button" class="icon-btn" aria-label="選單">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  </button>
+  <input type="search" placeholder="搜尋郵件" aria-label="搜尋郵件" />
+  <span class="avatar" aria-hidden="true">Y</span>
+</search>
+`,"./android/segmented-control.html":`<fieldset class="segmented">
+  <legend class="visually-hidden">交通方式</legend>
+  <label><input class="seg-input" type="radio" name="and-seg" checked /> 開車</label>
+  <label><input class="seg-input" type="radio" name="and-seg" /> 大眾運輸</label>
+  <label><input class="seg-input" type="radio" name="and-seg" /> 步行</label>
+</fieldset>
+`,"./android/separator.html":`<ul class="list" aria-label="設定">
+  <li><span class="list-item" style="min-height: 56px">網路和網際網路</span></li>
+  <li><hr /></li>
+  <li><span class="list-item" style="min-height: 56px">已連結的裝置</span></li>
+</ul>
+`,"./android/share-sheet.html":`<button type="button" class="icon-btn icon-btn-tonal" data-open="and-share" aria-label="分享">
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="18" cy="5.5" r="2.5" />
+    <circle cx="6" cy="12" r="2.5" />
+    <circle cx="18" cy="18.5" r="2.5" />
+    <path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4" />
+  </svg>
+</button>
+<dialog id="and-share" class="sheet" aria-labelledby="and-share-title">
+  <div class="handle" aria-hidden="true"></div>
+  <p id="and-share-title" style="margin: 0 16px 16px; font-size: 16px">分享「旅行相簿」</p>
+  <div class="share-targets">
+    <span class="share-target"><span></span>Messages</span>
+    <span class="share-target"><span></span>Gmail</span>
+    <span class="share-target"><span></span>雲端硬碟</span>
+    <span class="share-target"><span></span>附近分享</span>
+  </div>
+  <div class="row" style="justify-content: center; margin-top: 16px">
+    <button type="button" class="btn btn-text" data-close>取消</button>
+  </div>
+</dialog>
+`,"./android/share-sheet.thumb.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="sheet">
+    <div class="handle" aria-hidden="true"></div>
+    <p style="margin: 0 16px 16px; font-size: 16px">分享「旅行相簿」</p>
+    <div class="share-targets">
+      <span class="share-target"><span></span>Messages</span>
+      <span class="share-target"><span></span>Gmail</span>
+      <span class="share-target"><span></span>雲端硬碟</span>
+      <span class="share-target"><span></span>附近分享</span>
+    </div>
+  </div>
+</div>
+`,"./android/sidebar.html":`<button type="button" class="icon-btn" data-open="and-drawer-dialog" aria-label="開啟導覽匣">
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M4 7h16M4 12h16M4 17h16" />
+  </svg>
+</button>
+<dialog id="and-drawer-dialog" class="drawer" aria-labelledby="and-drawer-title">
+  <h3 id="and-drawer-title">郵件</h3>
+  <a href="#and-drawer" aria-current="page"
+    ><svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3.5 13.5 6 5h12l2.5 8.5V19h-17zM3.5 13.5H8l1.5 2.5h5l1.5-2.5h4.5" />
+    </svg>
+    收件匣</a
+  >
+  <a href="#and-drawer"
+    ><svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 12 20 4l-6 16-3-7z" />
+    </svg>
+    寄件備份</a
+  >
+  <a href="#and-drawer"
+    ><svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z" />
+    </svg>
+    已加星號</a
+  >
+  <button type="button" class="btn btn-text" data-close>關閉</button>
+</dialog>
+`,"./android/sidebar.thumb.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <nav class="drawer">
+    <h3>郵件</h3>
+    <a href="#and-drawer" aria-current="page"
+      ><svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M3.5 13.5 6 5h12l2.5 8.5V19h-17zM3.5 13.5H8l1.5 2.5h5l1.5-2.5h4.5" />
+      </svg>
+      收件匣</a
+    >
+    <a href="#and-drawer"
+      ><svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M4 12 20 4l-6 16-3-7z" />
+      </svg>
+      寄件備份</a
+    >
+    <a href="#and-drawer"
+      ><svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z" />
+      </svg>
+      已加星號</a
+    >
+  </nav>
+</div>
+`,"./android/slider.html":`<label class="stack"
+  >媒體音量
+  <input type="range" min="0" max="100" value="55" style="--fill: 55%" />
+</label>
+`,"./android/spinner.html":`<div role="status" class="stack" style="justify-items: center">
+  <span class="circular" aria-hidden="true"></span>
+  <span class="muted">載入中…</span>
+</div>
+`,"./android/table.html":`<ul class="list" aria-label="聯絡人">
+  <li>
+    <a class="list-item" href="#and-list"
+      ><span class="avatar avatar-large" aria-hidden="true">A</span
+      ><span class="text"
+        ><span class="headline">Amy Chen</span><span class="supporting">明天的會議改到 3 點</span></span
+      ><span class="trailing">10:42</span></a
+    >
+  </li>
+  <li>
+    <a class="list-item" href="#and-list"
+      ><span class="avatar avatar-large" aria-hidden="true">B</span
+      ><span class="text"><span class="headline">Ben Lin</span><span class="supporting">照片已上傳</span></span
+      ><span class="trailing">昨天</span></a
+    >
+  </li>
+</ul>
+`,"./android/tabs.html":`<div class="tabs">
+  <div role="tablist" aria-label="相簿">
+    <button type="button" role="tab" id="and-tab-1" aria-selected="true" aria-controls="and-panel-1">相片</button>
+    <button type="button" role="tab" id="and-tab-2" aria-selected="false" aria-controls="and-panel-2" tabindex="-1">
+      相簿
+    </button>
+    <button type="button" role="tab" id="and-tab-3" aria-selected="false" aria-controls="and-panel-3" tabindex="-1">
+      回憶
+    </button>
+  </div>
+  <div role="tabpanel" id="and-panel-1" aria-labelledby="and-tab-1">1,204 張相片</div>
+  <div role="tabpanel" id="and-panel-2" aria-labelledby="and-tab-2" hidden>12 個相簿</div>
+  <div role="tabpanel" id="and-panel-3" aria-labelledby="and-tab-3" hidden>去年的今天</div>
+</div>
+`,"./android/text-field.html":`<div class="stack">
+  <label class="tf"><input placeholder=" " value="王小明" /><span>姓名</span></label>
+  <label class="tf tf-outlined"><input type="email" placeholder=" " /><span>Email</span></label>
+</div>
+`,"./android/toast.html":`<button type="button" class="btn btn-tonal" data-toast="and-snackbars" data-message="已封存 1 則對話">封存</button>
+<div id="and-snackbars" role="status" aria-live="polite" class="snackbar-region"></div>
+`,"./android/toast.thumb.html":`<div class="snackbar">已封存 1 則對話<button type="button" class="btn btn-text">復原</button></div>
+`,"./android/toggle-switch.html":`<div class="stack">
+  <label class="switch">Wi‑Fi <input type="checkbox" role="switch" checked /></label>
+  <label class="switch">藍牙 <input type="checkbox" role="switch" /></label>
+</div>
+`,"./android/toolbar.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <div class="content muted">備忘錄內容</div>
+  <div class="bottombar" role="toolbar" aria-label="動作">
+    <button type="button" class="icon-btn" aria-label="核取清單">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m4 7 2 2 3-3M4 15l2 2 3-3M12 8h8M12 16h8" />
+      </svg>
+    </button>
+    <button type="button" class="icon-btn" aria-label="繪圖">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M4 20h4L19 9l-4-4L4 16z" />
+      </svg>
+    </button>
+    <button type="button" class="icon-btn" aria-label="分享">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="18" cy="5.5" r="2.5" />
+        <circle cx="6" cy="12" r="2.5" />
+        <circle cx="18" cy="18.5" r="2.5" />
+        <path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4" />
+      </svg>
+    </button>
+    <button type="button" class="fab" aria-label="新增">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 5v14M5 12h14" />
+      </svg>
+    </button>
+  </div>
+</div>
+`,"./android/tooltip.html":`<span class="tooltip-wrap">
+  <button type="button" class="icon-btn icon-btn-tonal" aria-label="新增至收藏" aria-describedby="and-tip">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z" />
+    </svg>
+  </button>
+  <span id="and-tip" role="tooltip" class="plain-tooltip">新增至收藏</span>
+</span>
+`,"./android/tooltip.thumb.html":`<span class="tooltip-wrap open">
+  <span class="icon-btn icon-btn-tonal"
+    ><svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z" /></svg
+  ></span>
+  <span class="plain-tooltip">新增至收藏</span>
+</span>
+`,"./android/top-app-bar.html":`<div class="phone">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>▾ ▮</span></div>
+  <header class="topbar">
+    <a href="#and-topbar" class="icon-btn" aria-label="返回"
+      ><svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M20 12H5M11 5l-7 7 7 7" /></svg
+    ></a>
+    <h3>相簿</h3>
+    <button type="button" class="icon-btn" aria-label="搜尋">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <path d="m20 20-4.8-4.8" />
+      </svg>
+    </button>
+    <button type="button" class="icon-btn" aria-label="更多選項">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <circle cx="12" cy="5.5" r="2" />
+        <circle cx="12" cy="12" r="2" />
+        <circle cx="12" cy="18.5" r="2" />
+      </svg>
+    </button>
+  </header>
+  <div class="content muted">12 個相簿</div>
+</div>
+`,"./android/wheel-picker.html":`<div class="wheel-wrap">
+  <ul class="wheel" data-wheel role="listbox" tabindex="0" aria-label="小時" aria-activedescendant="and-wheel-9">
+    <li role="option" id="and-wheel-7" aria-selected="false">07</li>
+    <li role="option" id="and-wheel-8" aria-selected="false">08</li>
+    <li role="option" id="and-wheel-9" aria-selected="true">09</li>
+    <li role="option" id="and-wheel-10" aria-selected="false">10</li>
+    <li role="option" id="and-wheel-11" aria-selected="false">11</li>
+  </ul>
+</div>
+`,"./android/wheel-picker.thumb.html":`<div class="wheel-wrap">
+  <ul class="wheel" style="padding: 0; overflow: hidden">
+    <li role="option">08</li>
+    <li role="option">09</li>
+    <li role="option">10</li>
+  </ul>
+</div>
+`,"./ios/action-sheet.html":`<button type="button" class="btn" data-open="ios-actionsheet">清除歷史記錄…</button>
 <dialog id="ios-actionsheet" class="actionsheet" aria-label="清除歷史記錄">
   <div class="actionsheet-group">
     <p>這會清除所有瀏覽記錄。</p>
