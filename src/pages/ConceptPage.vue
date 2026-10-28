@@ -29,6 +29,9 @@ useHead({
       <h1>
         {{ concept.name.en }} <span class="concept-zh">{{ concept.name.zh }}</span>
       </h1>
+      <p v-if="concept.status === 'draft'" class="draft-note">
+        草稿：名稱與 API 對應尚未對照官方文件驗證，使用前請先確認。
+      </p>
       <ul class="describe">
         <li v-for="line in concept.describe" :key="line">{{ line }}</li>
       </ul>

@@ -66,7 +66,7 @@ Disclosure control、Table view、Outline view、Button、Context menu、Menu、
 | `confusedWith`、`prompt.avoid` 指向存在的 `id` | 防止斷鏈 |
 | `prompt.keywords` 至少 2 個英文詞 | 第一個為最通用正式名稱 |
 | `guideline` 必須是 Apple、Material 或 W3C 網域 | 確保來源權威 |
-| `status: verified` 才會出現在正式站 | draft 只在 preview 部署顯示 |
+| `status: verified` 才會出現在正式站 | draft 只在 preview 部署顯示（2026-10-28 暫時調整：正式站也顯示 draft 並標註「草稿」，待足夠條目驗證後改回） |
 
 ## 技術棧與 repo 結構
 

@@ -1,6 +1,7 @@
 name: Deploy
 
-# main → gh-pages root (verified concepts only).
+# main → gh-pages root. Drafts are included (flagged on each page) until enough concepts are
+# verified; drop INCLUDE_DRAFTS from the production job to switch to verified-only.
 # Pull requests → gh-pages/pr-preview/pr-<n>/ (drafts included), removed when the PR closes.
 # Repo setting required once: Pages → Build and deployment → Deploy from branch → gh-pages / (root).
 
@@ -31,6 +32,7 @@ jobs:
       - run: pnpm build
         env:
           BASE_PATH: ${{ env.REPO_BASE }}
+          INCLUDE_DRAFTS: '1'
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist

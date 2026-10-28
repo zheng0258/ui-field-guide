@@ -19,8 +19,9 @@ XState v5, plain CSS custom properties (no Tailwind), Fuse.js, Vitest, Playwrigh
 ## Layout
 
 - `src/content/validate.ts` parses + validates + cross-checks content; `vite.config.ts` loads it as
-  `virtual:content` and fails the build on any issue. Drafts ship only in dev and preview builds
-  (`INCLUDE_DRAFTS=1`).
+  `virtual:content` and fails the build on any issue. Drafts ship only when
+  `INCLUDE_DRAFTS=1` (dev, PR previews, and — temporarily — the production deploy in
+  `.github/workflows/deploy.yml`; each draft page says it is unverified).
 - Browser code imports runtime values from `src/schema/constants.ts` (no Zod in the bundle);
   `src/schema/index.ts` is for validation and types.
 - `tools/measure-macos` (Swift) → `tools/measure-macos/output/macos.json` → `scripts/build-tokens.ts`

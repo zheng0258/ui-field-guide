@@ -245,6 +245,15 @@ select {
   letter-spacing: 0.04em;
 }
 
+.draft-note {
+  margin: 0 0 8px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--macos-color-system-orange);
+  background: var(--surface);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
 .describe {
   padding-left: 1.2em;
 }
