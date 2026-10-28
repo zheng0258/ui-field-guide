@@ -1,0 +1,28 @@
+id: share-sheet
+kind: component
+name: { en: 'Share sheet', zh: '分享面板' }
+aliases: ['activity view', 'share menu', '分享選單']
+describe:
+  - '按分享後跳出來，列出可以傳給誰、用哪個 App 開'
+category: overlays
+confusedWith: ['action-sheet']
+platforms:
+  macos:
+    name: 'Share menu'
+    api: { 'appkit': 'NSSharingServicePicker', 'swiftui': 'ShareLink' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/activity-views
+  ios:
+    name: 'Activity view'
+    api: { 'uikit': 'UIActivityViewController', 'swiftui': 'ShareLink' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/activity-views
+  android:
+    name: 'Sharesheet'
+    api: { 'view': 'Intent.createChooser(ACTION_SEND)' }
+    guideline: https://developer.android.com/training/sharing/send
+prompt:
+  keywords: ['share sheet', 'UIActivityViewController', 'SwiftUI ShareLink']
+  descriptors: ['row of app targets', 'list of actions below']
+  avoid: ['action-sheet']
+  coding: null
+  image: null
+status: draft

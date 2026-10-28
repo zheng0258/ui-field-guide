@@ -1,0 +1,24 @@
+id: bottom-sheet
+kind: component
+name: { en: 'Bottom sheet', zh: '底部面板' }
+aliases: ['sheet', 'half sheet', 'drawer', '底部抽屜']
+describe:
+  - '從畫面下方拉上來、只蓋住一部分的面板'
+category: overlays
+confusedWith: ['action-sheet', 'modal-dialog']
+platforms:
+  ios:
+    name: 'Sheet (detents)'
+    api: { 'uikit': 'UISheetPresentationController.detents', 'swiftui': '.presentationDetents([.medium])' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/sheets
+  android:
+    name: 'Bottom sheet'
+    api: { 'compose': 'ModalBottomSheet', 'view': 'BottomSheetDialogFragment' }
+    guideline: https://m3.material.io/components/bottom-sheets/overview
+prompt:
+  keywords: ['bottom sheet', 'Material modal bottom sheet', 'half-height sheet']
+  descriptors: ['drag handle on top', 'covers the lower half', 'scrim behind']
+  avoid: ['modal-dialog']
+  coding: null
+  image: null
+status: draft

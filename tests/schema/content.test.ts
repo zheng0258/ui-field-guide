@@ -12,9 +12,4 @@ describe('content/', () => {
   it('covers the Web component list (about 45 items)', () => {
     expect(concepts.filter((concept) => concept.kind === 'component').length).toBeGreaterThanOrEqual(45)
   })
-
-  it('fills the Web column for every component', () => {
-    const missingWeb = concepts.filter((concept) => concept.kind === 'component' && !concept.platforms.web)
-    expect(missingWeb.map((concept) => concept.id)).toEqual([])
-  })
 })

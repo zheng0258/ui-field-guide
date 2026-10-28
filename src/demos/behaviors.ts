@@ -209,10 +209,57 @@ function contextMenus(root: HTMLElement): Cleanup {
   }
 }
 
+/** `<button data-step="1|-1">` inside `[data-stepper]` nudges that group's number input within its min/max. */
+function steppers(root: HTMLElement): Cleanup {
+  return on(root, 'click', (event) => {
+    const button = closestIn(root, event.target, '[data-step]')
+    const input = button?.closest('[data-stepper]')?.querySelector<HTMLInputElement>('input')
+    if (!button || !input) return
+    const delta = Number(button.dataset.step)
+    if (delta > 0) input.stepUp()
+    else input.stepDown()
+    input.dispatchEvent(new Event('input', { bubbles: true }))
+  })
+}
+
+/** Rows in `[data-selectable]` tables become selected on click (single selection). */
+function selectableRows(root: HTMLElement): Cleanup {
+  return on(root, 'click', (event) => {
+    const row = closestIn(root, event.target, '[data-selectable] tbody tr')
+    if (!row) return
+    row.parentElement
+      ?.querySelectorAll('tr')
+      .forEach((other) => other.setAttribute('aria-selected', String(other === row)))
+  })
+}
+
+/** Keeps `--fill` on range inputs in sync so CSS can paint the filled part of the track. */
+function rangeFill(root: HTMLElement): Cleanup {
+  const paint = (input: HTMLInputElement) => {
+    const min = Number(input.min || 0)
+    const max = Number(input.max || 100)
+    input.style.setProperty('--fill', `${((Number(input.value) - min) / (max - min)) * 100}%`)
+  }
+  root.querySelectorAll<HTMLInputElement>('input[type="range"]').forEach(paint)
+  return on(root, 'input', (event) => {
+    if (event.target instanceof HTMLInputElement && event.target.type === 'range') paint(event.target)
+  })
+}
+
 /** Attaches every behavior to a live demo root; returns one cleanup for unmount. */
 export function mountDemo(root: HTMLElement): Cleanup {
-  const cleanups = [dialogs, tabs, toasts, trees, treegrids, carousels, sortable, contextMenus].map((behavior) =>
-    behavior(root),
-  )
+  const cleanups = [
+    dialogs,
+    tabs,
+    toasts,
+    trees,
+    treegrids,
+    carousels,
+    sortable,
+    contextMenus,
+    steppers,
+    selectableRows,
+    rangeFill,
+  ].map((behavior) => behavior(root))
   return () => cleanups.forEach((cleanup) => cleanup())
 }

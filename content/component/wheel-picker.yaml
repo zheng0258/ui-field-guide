@@ -1,0 +1,23 @@
+id: wheel-picker
+kind: component
+name: { en: 'Wheel picker', zh: '滾輪選擇器' }
+aliases: ['picker', 'spinner', 'number picker', '滾輪']
+describe:
+  - '上下滾動的滾輪，中間那格就是選到的值'
+category: input
+confusedWith: ['popup-select', 'date-picker']
+platforms:
+  ios:
+    name: 'Picker (wheel)'
+    api: { 'uikit': 'UIPickerView', 'swiftui': 'Picker(.wheel)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/pickers
+  android:
+    name: 'Number picker'
+    api: { 'view': 'NumberPicker' }
+prompt:
+  keywords: ['wheel picker', 'UIPickerView', 'SwiftUI Picker wheel style']
+  descriptors: ['vertical scrolling wheel', 'selected row in the center band']
+  avoid: ['popup-select']
+  coding: null
+  image: null
+status: draft

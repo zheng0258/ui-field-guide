@@ -1,0 +1,24 @@
+id: bottom-navigation
+kind: component
+name: { en: 'Bottom navigation', zh: '底部導覽列' }
+aliases: ['tab bar', 'navigation bar', 'bottom tabs', '底部分頁']
+describe:
+  - '畫面最下面一排圖示，切換 App 的幾個主要區塊'
+category: navigation
+confusedWith: ['top-app-bar', 'tabs']
+platforms:
+  ios:
+    name: 'Tab bar'
+    api: { 'uikit': 'UITabBar', 'swiftui': 'TabView' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/tab-bars
+  android:
+    name: 'Navigation bar'
+    api: { 'compose': 'NavigationBar + NavigationBarItem', 'view': 'BottomNavigationView' }
+    guideline: https://m3.material.io/components/navigation-bar/overview
+prompt:
+  keywords: ['bottom navigation bar', 'iOS tab bar', 'Material navigation bar']
+  descriptors: ['3 to 5 icon destinations with labels', 'selected destination highlighted']
+  avoid: ['tabs']
+  coding: null
+  image: null
+status: draft

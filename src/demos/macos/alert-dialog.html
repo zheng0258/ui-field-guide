@@ -1,0 +1,16 @@
+<button type="button" class="btn" data-open="mac-alert">清空垃圾桶…</button>
+<dialog
+  id="mac-alert"
+  class="alert"
+  role="alertdialog"
+  aria-labelledby="mac-alert-title"
+  aria-describedby="mac-alert-desc"
+>
+  <div class="alert-icon" aria-hidden="true"></div>
+  <h3 id="mac-alert-title">確定要永久刪除垃圾桶中的項目嗎？</h3>
+  <p id="mac-alert-desc">此動作無法復原。</p>
+  <div class="actions">
+    <button type="button" class="btn btn-default" data-close>清空垃圾桶</button>
+    <button type="button" class="btn" data-close autofocus>取消</button>
+  </div>
+</dialog>

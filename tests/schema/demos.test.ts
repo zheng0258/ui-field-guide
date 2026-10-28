@@ -1,28 +1,41 @@
-import { readdirSync } from 'node:fs'
+import { existsSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { readContentFiles } from '../../src/content/fs'
 import { validateContent } from '../../src/content/validate'
+import { PLATFORMS, type Platform } from '../../src/schema'
 
-const demoDir = join(import.meta.dirname, '..', '..', 'src', 'demos', 'web')
-const files = readdirSync(demoDir).filter((name) => name.endsWith('.html'))
-const demoIds = files.filter((name) => !name.endsWith('.thumb.html')).map((name) => name.replace(/\.html$/, ''))
-const thumbIds = files.filter((name) => name.endsWith('.thumb.html')).map((name) => name.replace(/\.thumb\.html$/, ''))
+/** Platforms whose demo set is complete; every concept on them must have a demo. */
+const COMPLETE: readonly Platform[] = ['web', 'macos']
+
 const { concepts } = validateContent(readContentFiles())
-const webIds = concepts
-  .filter((concept) => 'platforms' in concept && concept.platforms?.web)
-  .map((concept) => concept.id)
+const demosRoot = join(import.meta.dirname, '..', '..', 'src', 'demos')
 
-describe('Web demos', () => {
-  it('exist for every concept with a Web entry', () => {
-    expect(webIds.filter((id) => !demoIds.includes(id))).toEqual([])
+function demoFiles(platform: Platform) {
+  const dir = join(demosRoot, platform)
+  const files = existsSync(dir) ? readdirSync(dir).filter((name) => name.endsWith('.html')) : []
+  return {
+    demos: files.filter((name) => !name.endsWith('.thumb.html')).map((name) => name.replace(/\.html$/, '')),
+    thumbs: files.filter((name) => name.endsWith('.thumb.html')).map((name) => name.replace(/\.thumb\.html$/, '')),
+  }
+}
+
+const idsOn = (platform: Platform) =>
+  concepts.filter((concept) => 'platforms' in concept && concept.platforms?.[platform]).map((concept) => concept.id)
+
+describe.each(PLATFORMS)('%s demos', (platform) => {
+  const { demos, thumbs } = demoFiles(platform)
+  const ids = idsOn(platform)
+
+  it.runIf(COMPLETE.includes(platform))('exist for every concept on the platform', () => {
+    expect(ids.filter((id) => !demos.includes(id))).toEqual([])
   })
 
-  it('belong to a concept with a Web entry', () => {
-    expect(demoIds.filter((id) => !webIds.includes(id))).toEqual([])
+  it('belong to a concept on the platform', () => {
+    expect(demos.filter((id) => !ids.includes(id))).toEqual([])
   })
 
   it('only add thumbnails next to an existing demo', () => {
-    expect(thumbIds.filter((id) => !demoIds.includes(id))).toEqual([])
+    expect(thumbs.filter((id) => !demos.includes(id))).toEqual([])
   })
 })

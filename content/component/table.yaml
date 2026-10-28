@@ -15,6 +15,10 @@ platforms:
     name: 'List'
     api: { 'uikit': 'UITableView', 'swiftui': 'List' }
     guideline: https://developer.apple.com/design/human-interface-guidelines/lists-and-tables
+  android:
+    name: 'List'
+    api: { 'compose': 'LazyColumn + ListItem', 'view': 'RecyclerView' }
+    guideline: https://m3.material.io/components/lists/overview
   web:
     name: 'Table'
     api: { 'html': '<table>', 'aria': 'table' }

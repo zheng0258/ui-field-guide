@@ -1,0 +1,24 @@
+id: icon-button
+kind: component
+name: { en: 'Icon button', zh: '圖示按鈕' }
+aliases: ['icon-only button', '圖示鍵']
+describe:
+  - '只有圖示、沒有文字的按鈕'
+category: actions
+confusedWith: ['button', 'fab']
+platforms:
+  android:
+    name: 'Icon button'
+    api: { 'compose': 'IconButton / FilledIconButton', 'view': 'MaterialButton (icon only)' }
+    guideline: https://m3.material.io/components/icon-buttons/overview
+  web:
+    name: 'Icon button'
+    api: { 'html': '<button aria-label>', 'aria': 'button' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/button/
+prompt:
+  keywords: ['icon button', 'icon-only button with aria-label']
+  descriptors: ['single icon', 'circular hit target', 'accessible name from aria-label']
+  avoid: ['fab']
+  coding: null
+  image: null
+status: draft

@@ -1,0 +1,20 @@
+id: fab
+kind: component
+name: { en: 'Floating action button', zh: '浮動動作按鈕' }
+aliases: ['FAB', 'floating button', '懸浮按鈕']
+describe:
+  - '浮在畫面右下角的大圓角按鈕，放最主要的動作'
+category: actions
+confusedWith: ['button', 'icon-button']
+platforms:
+  android:
+    name: 'FAB'
+    api: { 'compose': 'FloatingActionButton / ExtendedFloatingActionButton', 'view': 'FloatingActionButton' }
+    guideline: https://m3.material.io/components/floating-action-button/overview
+prompt:
+  keywords: ['floating action button', 'Material FAB']
+  descriptors: ['large rounded square with an icon', 'fixed at the bottom trailing corner']
+  avoid: ['icon-button']
+  coding: null
+  image: null
+status: draft

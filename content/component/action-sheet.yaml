@@ -1,0 +1,20 @@
+id: action-sheet
+kind: component
+name: { en: 'Action sheet', zh: '動作表' }
+aliases: ['confirmation dialog', 'action menu', '動作清單']
+describe:
+  - '從下方跳出的一串選項，最下面通常是「取消」'
+category: overlays
+confusedWith: ['alert-dialog', 'bottom-sheet']
+platforms:
+  ios:
+    name: 'Action sheet'
+    api: { 'uikit': 'UIAlertController (.actionSheet)', 'swiftui': '.confirmationDialog' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/action-sheets
+prompt:
+  keywords: ['action sheet', 'SwiftUI confirmationDialog', 'UIAlertController actionSheet']
+  descriptors: ['list of choices slides up from bottom', 'destructive option in red', 'separate Cancel button']
+  avoid: ['alert-dialog']
+  coding: null
+  image: null
+status: draft

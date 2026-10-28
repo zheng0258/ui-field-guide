@@ -1,0 +1,24 @@
+id: top-app-bar
+kind: component
+name: { en: 'Top app bar', zh: '頂部導覽列' }
+aliases: ['navigation bar', 'app bar', 'title bar', '標題列']
+describe:
+  - '畫面最上面一條，放標題、返回鍵和動作按鈕'
+category: navigation
+confusedWith: ['bottom-navigation', 'toolbar']
+platforms:
+  ios:
+    name: 'Navigation bar'
+    api: { 'uikit': 'UINavigationBar', 'swiftui': '.navigationTitle + .toolbar' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/navigation-bars
+  android:
+    name: 'Top app bar'
+    api: { 'compose': 'TopAppBar / CenterAlignedTopAppBar', 'view': 'MaterialToolbar' }
+    guideline: https://m3.material.io/components/app-bars/overview
+prompt:
+  keywords: ['top app bar', 'iOS navigation bar', 'title with back button']
+  descriptors: ['page title', 'back button on the leading edge', 'action icons on the trailing edge']
+  avoid: ['bottom-navigation']
+  coding: null
+  image: null
+status: draft
