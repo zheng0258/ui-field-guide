@@ -28,6 +28,14 @@ component by sight before they know its name; a text list of 10 items did not su
   carousel, sorting, context menu) attach by data attributes and ARIA roles in
   `src/demos/behaviors.ts`.
 
+## Follow-up (2026-10-28)
+
+macOS, iOS and Android demos followed in that order, so every platform entry now has a demo;
+the coverage test enforces it for all four platforms. iOS and Android got the MVP concepts the
+handoff lists but the Web table lacked (top app bar, bottom navigation, action sheet, bottom
+sheet, wheel picker, share sheet, FAB, icon button). iOS "Navigation bar" maps to the top app
+bar concept and Android "Navigation bar" to bottom navigation — the clash the handoff warns of.
+
 ## Consequences
 
 - `/c/<id>` URLs from phase 0 no longer exist.

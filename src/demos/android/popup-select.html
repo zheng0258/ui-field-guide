@@ -1,0 +1,20 @@
+<div class="tf tf-outlined tf-dropdown" style="anchor-name: --and-exposed">
+  <input id="and-exposed" readonly value="台北" placeholder=" " tabindex="-1" aria-hidden="true" />
+  <span>城市</span>
+  <span class="trailing"
+    ><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7 10h10l-5 5z" /></svg
+  ></span>
+  <button
+    type="button"
+    popovertarget="and-exposed-list"
+    aria-haspopup="listbox"
+    aria-label="城市：台北"
+    style="position: absolute; inset: 0; border: 0; border-radius: 4px; background: none; cursor: pointer"
+  ></button>
+</div>
+<div id="and-exposed-list" popover role="listbox" class="menu menu-dropdown" data-for="and-exposed" aria-label="城市">
+  <button type="button" role="option" aria-selected="true">台北</button>
+  <button type="button" role="option" aria-selected="false">台中</button>
+  <button type="button" role="option" aria-selected="false">高雄</button>
+</div>

@@ -293,6 +293,22 @@ function wheels(root: HTMLElement): Cleanup {
   }
 }
 
+/** Picking `[role="option"]` in a popover listbox with `data-for="inputId"` fills that input and closes it. */
+function listboxPopovers(root: HTMLElement): Cleanup {
+  return on(root, 'click', (event) => {
+    const option = closestIn(root, event.target, '[data-for] [role="option"]')
+    const listbox = option?.closest<HTMLElement>('[data-for]')
+    const input = listbox && root.querySelector<HTMLInputElement>(`#${listbox.dataset.for}`)
+    if (!option || !listbox || !input) return
+    input.value = option.textContent?.trim() ?? ''
+    listbox
+      .querySelectorAll('[role="option"]')
+      .forEach((other) => other.setAttribute('aria-selected', String(other === option)))
+    if (listbox.matches(':popover-open')) listbox.hidePopover()
+    input.focus()
+  })
+}
+
 /** Attaches every behavior to a live demo root; returns one cleanup for unmount. */
 export function mountDemo(root: HTMLElement): Cleanup {
   const cleanups = [
@@ -308,6 +324,7 @@ export function mountDemo(root: HTMLElement): Cleanup {
     selectableRows,
     rangeFill,
     wheels,
+    listboxPopovers,
   ].map((behavior) => behavior(root))
   return () => cleanups.forEach((cleanup) => cleanup())
 }

@@ -9,7 +9,7 @@ names — macOS, iOS, Android and Web — plus a ready-to-copy prompt for coding
 
 - Pick a platform, then find the component by its thumbnail: `/web` → `/web/modal-dialog`.
   Each page has a live demo with its HTML source, the names on all four platforms, and a prompt.
-  Web has all ~45 components with demos; macOS, iOS and Android list names and APIs, demos next.
+  All four platforms have demos: Web 49, macOS 36, iOS 34, Android 36 components.
 
 - Every concept is one YAML file in `content/<kind>/<id>.yaml`, validated by a Zod discriminated union
   (`src/schema/`). Broken cross-references fail CI.

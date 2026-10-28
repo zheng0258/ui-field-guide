@@ -26,7 +26,9 @@ XState v5, plain CSS custom properties (no Tailwind), Fuse.js, Vitest, Playwrigh
   (see `docs/decisions/0002-platform-first-flow.md`).
 - Demos are plain HTML in `src/demos/<platform>/<id>.html` (optional `<id>.thumb.html` for the
   thumbnail), rendered live and shown as source; shared behaviors live in `src/demos/behaviors.ts`
-  and attach by data attributes / ARIA roles. Every concept with a Web entry must have a Web demo.
+  and attach by data attributes / ARIA roles. Every platform entry needs a demo on that platform
+  (`tests/schema/demos.test.ts`). Web and iOS / Android palettes are hand-written; macOS uses
+  the generated tokens.
 - Browser code imports runtime values from `src/schema/constants.ts` (no Zod in the bundle);
   `src/schema/index.ts` is for validation and types.
 - `tools/measure-macos` (Swift) → `tools/measure-macos/output/macos.json` → `scripts/build-tokens.ts`
