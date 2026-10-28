@@ -1,4 +1,1030 @@
-var e=Object.assign({"./macos/alert-dialog.html":`<button type="button" class="btn" data-open="mac-alert">清空垃圾桶…</button>
+var e=Object.assign({"./ios/action-sheet.html":`<button type="button" class="btn" data-open="ios-actionsheet">清除歷史記錄…</button>
+<dialog id="ios-actionsheet" class="actionsheet" aria-label="清除歷史記錄">
+  <div class="actionsheet-group">
+    <p>這會清除所有瀏覽記錄。</p>
+    <button type="button" data-close>清除最近一小時</button>
+    <button type="button" class="danger" data-close>清除全部</button>
+  </div>
+  <div class="actionsheet-group actionsheet-cancel">
+    <button type="button" data-close autofocus>取消</button>
+  </div>
+</dialog>
+`,"./ios/action-sheet.thumb.html":`<div class="screen">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="actionsheet">
+    <div class="actionsheet-group">
+      <p>這會清除所有瀏覽記錄。</p>
+      <button type="button">清除最近一小時</button><button type="button" class="danger">清除全部</button>
+    </div>
+    <div class="actionsheet-group actionsheet-cancel"><button type="button">取消</button></div>
+  </div>
+</div>
+`,"./ios/alert-dialog.html":`<button type="button" class="btn" data-open="ios-alert">刪除照片</button>
+<dialog
+  id="ios-alert"
+  class="alert"
+  role="alertdialog"
+  aria-labelledby="ios-alert-title"
+  aria-describedby="ios-alert-desc"
+>
+  <div class="alert-body">
+    <h3 id="ios-alert-title">要刪除這張照片嗎？</h3>
+    <p id="ios-alert-desc">照片會從所有裝置上移除。</p>
+  </div>
+  <div class="alert-actions">
+    <button type="button" data-close autofocus>取消</button>
+    <button type="button" class="danger" data-close>刪除</button>
+  </div>
+</dialog>
+`,"./ios/alert-dialog.thumb.html":`<div class="screen">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="alert">
+    <div class="alert-body">
+      <h3>要刪除這張照片嗎？</h3>
+      <p>照片會從所有裝置上移除。</p>
+    </div>
+    <div class="alert-actions">
+      <button type="button">取消</button><button type="button" class="danger">刪除</button>
+    </div>
+  </div>
+</div>
+`,"./ios/badge.html":`<div class="list" style="width: 260px">
+  <a class="cell" href="#ios-badge"
+    >軟體更新<span class="trailing"
+      ><span class="badge badge-inline">1</span
+      ><svg
+        width="8"
+        height="13"
+        viewBox="0 0 8 13"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m1.5 1.5 5 5-5 5" /></svg></span
+  ></a>
+  <a class="cell" href="#ios-badge"
+    >收件匣<span class="trailing"
+      >12<svg
+        width="8"
+        height="13"
+        viewBox="0 0 8 13"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m1.5 1.5 5 5-5 5" /></svg></span
+  ></a>
+</div>
+`,"./ios/bottom-navigation.html":`<div class="screen">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="content"><p class="muted" style="padding-top: 40px; text-align: center">首頁內容</p></div>
+  <nav class="tabbar" aria-label="分頁">
+    <a href="#ios-tab" aria-current="page"
+      ><svg
+        width="24"
+        height="22"
+        viewBox="0 0 24 22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M3 10 12 2.5 21 10M5.5 8v12h13V8" /></svg
+      >首頁</a
+    >
+    <a href="#ios-tab"
+      ><svg
+        width="22"
+        height="22"
+        viewBox="0 0 22 22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="9.5" cy="9.5" r="7" />
+        <path d="m15 15 5.5 5.5" /></svg
+      >搜尋</a
+    >
+    <a href="#ios-tab"
+      ><svg
+        width="24"
+        height="22"
+        viewBox="0 0 24 22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 20s-8.5-5-8.5-11A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8.5 3c0 6-8.5 11-8.5 11z" /></svg
+      >收藏<span class="badge">3</span></a
+    >
+    <a href="#ios-tab"
+      ><svg
+        width="22"
+        height="22"
+        viewBox="0 0 22 22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="7" r="4" />
+        <path d="M3 20.5c1-4 4.2-6 8-6s7 2 8 6" /></svg
+      >帳號</a
+    >
+  </nav>
+</div>
+`,"./ios/bottom-sheet.html":`<button type="button" class="btn" data-open="ios-detent">顯示附近地點</button>
+<dialog id="ios-detent" class="sheet sheet-medium" aria-labelledby="ios-detent-title">
+  <div class="grabber" aria-hidden="true"></div>
+  <h3 id="ios-detent-title" style="margin: 4px 0 12px; font-size: 22px">附近地點</h3>
+  <ul class="list" style="background: var(--i-fill)">
+    <li>
+      <span class="cell">咖啡廳<span class="trailing">120 公尺</span></span>
+    </li>
+    <li>
+      <span class="cell">書店<span class="trailing">350 公尺</span></span>
+    </li>
+  </ul>
+  <button type="button" class="btn btn-plain" data-close>關閉</button>
+</dialog>
+`,"./ios/bottom-sheet.thumb.html":`<div class="screen">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="content" style="background: linear-gradient(160deg, #cde8c8, #a9d4f5)"></div>
+  <div class="sheet sheet-medium">
+    <div class="grabber" aria-hidden="true"></div>
+    <h3 style="margin: 4px 0 12px; font-size: 22px">附近地點</h3>
+    <ul class="list" style="background: var(--i-fill)">
+      <li>
+        <span class="cell">咖啡廳<span class="trailing">120 公尺</span></span>
+      </li>
+      <li>
+        <span class="cell">書店<span class="trailing">350 公尺</span></span>
+      </li>
+    </ul>
+  </div>
+</div>
+`,"./ios/button.html":`<div class="stack" style="justify-items: center">
+  <button type="button" class="btn btn-filled">繼續</button>
+  <button type="button" class="btn">稍後再說</button>
+  <button type="button" class="btn btn-plain">略過</button>
+</div>
+`,"./ios/card.html":`<section class="groupbox" aria-labelledby="ios-groupbox">
+  <span id="ios-groupbox" class="groupbox-label">今日活動</span>
+  <span>步數 6,240 · 爬樓 8 層</span>
+</section>
+`,"./ios/carousel.html":`<section aria-roledescription="carousel" aria-label="精選" class="carousel">
+  <div class="slide slide-a" role="group" aria-roledescription="slide" aria-label="1 / 3">夏日歌單</div>
+  <div class="slide slide-b" role="group" aria-roledescription="slide" aria-label="2 / 3" hidden>專注模式</div>
+  <div class="slide slide-c" role="group" aria-roledescription="slide" aria-label="3 / 3" hidden>夜晚放鬆</div>
+  <div class="page-dots">
+    <button type="button" data-slide="0" aria-label="第 1 頁" aria-current="true"></button>
+    <button type="button" data-slide="1" aria-label="第 2 頁" aria-current="false"></button>
+    <button type="button" data-slide="2" aria-label="第 3 頁" aria-current="false"></button>
+  </div>
+</section>
+`,"./ios/color-picker.html":`<div class="list" style="width: 280px">
+  <label class="cell"
+    >背景顏色 <span class="trailing"><input type="color" class="colorwell" value="#34c759" /></span
+  ></label>
+</div>
+`,"./ios/context-menu.html":`<div
+  tabindex="0"
+  data-contextmenu="ios-context"
+  class="stack"
+  style="justify-items: center; padding: 16px 24px; border-radius: 16px; background: var(--i-cell)"
+>
+  <span
+    style="width: 120px; height: 80px; border-radius: 10px; background: linear-gradient(135deg, #5ac8fa, #007aff)"
+  ></span>
+  <span class="small muted">長按（或右鍵、Shift+F10）</span>
+</div>
+<div id="ios-context" popover role="menu" class="menu menu-floating">
+  <button type="button" role="menuitem">拷貝</button>
+  <button type="button" role="menuitem">
+    分享
+    <svg
+      width="18"
+      height="22"
+      viewBox="0 0 18 22"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M9 1.5v12M5 5.5l4-4 4 4M6 9H3v11.5h12V9h-3" />
+    </svg>
+  </button>
+  <button type="button" role="menuitem">
+    加入喜好項目
+    <svg
+      width="24"
+      height="22"
+      viewBox="0 0 24 22"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 20s-8.5-5-8.5-11A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8.5 3c0 6-8.5 11-8.5 11z" />
+    </svg>
+  </button>
+  <hr />
+  <button type="button" role="menuitem" class="danger">
+    刪除
+    <svg
+      width="18"
+      height="20"
+      viewBox="0 0 18 20"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M2 4.5h14M7 4.5V2.5h4v2M4 4.5l1 13.5h8l1-13.5" />
+    </svg>
+  </button>
+</div>
+`,"./ios/context-menu.thumb.html":`<div class="stack" style="justify-items: center">
+  <span
+    style="
+      width: 150px;
+      height: 100px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #5ac8fa, #007aff);
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
+    "
+  ></span>
+  <div class="menu menu-static">
+    <button type="button">拷貝</button>
+    <button type="button">
+      分享
+      <svg
+        width="18"
+        height="22"
+        viewBox="0 0 18 22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M9 1.5v12M5 5.5l4-4 4 4M6 9H3v11.5h12V9h-3" />
+      </svg>
+    </button>
+    <hr />
+    <button type="button" class="danger">
+      刪除
+      <svg
+        width="18"
+        height="20"
+        viewBox="0 0 18 20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M2 4.5h14M7 4.5V2.5h4v2M4 4.5l1 13.5h8l1-13.5" />
+      </svg>
+    </button>
+  </div>
+</div>
+`,"./ios/date-picker.html":`<div class="list" style="width: 290px">
+  <label class="cell"
+    >日期 <span class="trailing"><input type="date" class="date-chip" value="2026-11-14" /></span
+  ></label>
+  <label class="cell"
+    >時間 <span class="trailing"><input type="time" class="date-chip" value="09:30" /></span
+  ></label>
+</div>
+`,"./ios/disclosure.html":`<details>
+  <summary>進階設定</summary>
+  <label class="switch">低耗電模式 <input type="checkbox" role="switch" /></label>
+</details>
+`,"./ios/meter.html":`<div class="gauge">
+  <svg width="96" height="96" viewBox="0 0 96 96" aria-hidden="true">
+    <circle
+      cx="48"
+      cy="48"
+      r="40"
+      fill="none"
+      stroke="var(--i-fill-strong)"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-dasharray="188.5 251.3"
+    />
+    <circle
+      cx="48"
+      cy="48"
+      r="40"
+      fill="none"
+      stroke="var(--i-green)"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-dasharray="135.7 251.3"
+    />
+  </svg>
+  <meter class="visually-hidden" min="0" max="100" value="72" aria-label="空氣品質">72</meter>
+  <strong aria-hidden="true">72</strong>
+</div>
+`,"./ios/modal-dialog.html":`<button type="button" class="btn btn-filled" data-open="ios-sheet">新增提醒事項</button>
+<dialog id="ios-sheet" class="sheet" aria-labelledby="ios-sheet-title">
+  <div class="grabber" aria-hidden="true"></div>
+  <div class="sheet-header">
+    <button type="button" class="btn btn-plain" data-close>取消</button>
+    <h3 id="ios-sheet-title">新增提醒事項</h3>
+    <button type="button" class="btn btn-plain" data-close><strong>完成</strong></button>
+  </div>
+  <input class="field" placeholder="標題" aria-label="標題" style="width: 100%; background: var(--i-fill)" />
+</dialog>
+`,"./ios/modal-dialog.thumb.html":`<div class="screen">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="sheet">
+    <div class="grabber" aria-hidden="true"></div>
+    <div class="sheet-header">
+      <button type="button" class="btn btn-plain">取消</button>
+      <h3>新增提醒事項</h3>
+      <button type="button" class="btn btn-plain"><strong>完成</strong></button>
+    </div>
+    <input class="field" placeholder="標題" aria-label="標題" style="width: 100%; background: var(--i-fill)" />
+  </div>
+</div>
+`,"./ios/popover.html":`<button type="button" class="btn" popovertarget="ios-popover">文字格式</button>
+<div id="ios-popover" popover class="popover">
+  <p style="font-weight: 600; margin-bottom: 10px">格式</p>
+  <label class="switch">粗體 <input type="checkbox" role="switch" /></label>
+</div>
+`,"./ios/popover.thumb.html":`<div class="stack" style="justify-items: start; gap: 4px">
+  <span class="btn">文字格式</span>
+  <div class="popover popover-static">
+    <p style="font-weight: 600; margin-bottom: 10px">格式</p>
+    <label class="switch">粗體 <input type="checkbox" role="switch" /></label>
+  </div>
+</div>
+`,"./ios/popup-select.html":`<div class="list" style="width: 290px">
+  <div class="cell">
+    排序方式
+    <span class="trailing">
+      <button type="button" class="popup-trigger" popovertarget="ios-popup" aria-haspopup="menu">
+        最近加入
+        <svg
+          width="8"
+          height="13"
+          viewBox="0 0 8 13"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M1.5 4.5 4 2l2.5 2.5M1.5 8.5 4 11l2.5-2.5" />
+        </svg>
+      </button>
+    </span>
+  </div>
+</div>
+<div id="ios-popup" popover role="menu" class="menu">
+  <button type="button" role="menuitemradio" aria-checked="false">
+    <span>名稱</span><span class="check-slot"></span>
+  </button>
+  <button type="button" role="menuitemradio" aria-checked="true">
+    <span>最近加入</span
+    ><span class="check-slot"
+      ><svg
+        width="14"
+        height="12"
+        viewBox="0 0 14 12"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m1.5 6.5 4 4 7-9" /></svg
+    ></span>
+  </button>
+  <button type="button" role="menuitemradio" aria-checked="false">
+    <span>評分</span><span class="check-slot"></span>
+  </button>
+</div>
+`,"./ios/progress-indicator.html":`<label class="stack"
+  >正在下載更新…
+  <progress max="100" value="40">40%</progress>
+  <span class="small muted">還剩約 3 分鐘</span>
+</label>
+`,"./ios/pull-down-menu.html":`<button type="button" class="btn btn-glass" popovertarget="ios-pull-down" aria-haspopup="menu" aria-label="更多">
+  <svg width="20" height="4" viewBox="0 0 20 4" fill="currentColor" aria-hidden="true">
+    <circle cx="2" cy="2" r="2" />
+    <circle cx="10" cy="2" r="2" />
+    <circle cx="18" cy="2" r="2" />
+  </svg>
+</button>
+<div id="ios-pull-down" popover role="menu" class="menu">
+  <button type="button" role="menuitem">
+    選取
+    <svg
+      width="14"
+      height="12"
+      viewBox="0 0 14 12"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m1.5 6.5 4 4 7-9" />
+    </svg>
+  </button>
+  <button type="button" role="menuitem">
+    編輯
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12.5 2.5l3 3L6 15H3v-3z" />
+    </svg>
+  </button>
+  <hr />
+  <button type="button" role="menuitem" class="danger">
+    刪除
+    <svg
+      width="18"
+      height="20"
+      viewBox="0 0 18 20"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M2 4.5h14M7 4.5V2.5h4v2M4 4.5l1 13.5h8l1-13.5" />
+    </svg>
+  </button>
+</div>
+`,"./ios/pull-down-menu.thumb.html":`<div class="stack" style="justify-items: start">
+  <span class="btn btn-glass"
+    ><svg width="20" height="4" viewBox="0 0 20 4" fill="currentColor" aria-hidden="true">
+      <circle cx="2" cy="2" r="2" />
+      <circle cx="10" cy="2" r="2" />
+      <circle cx="18" cy="2" r="2" /></svg
+  ></span>
+  <div class="menu menu-static">
+    <button type="button">
+      選取
+      <svg
+        width="14"
+        height="12"
+        viewBox="0 0 14 12"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m1.5 6.5 4 4 7-9" />
+      </svg>
+    </button>
+    <button type="button">
+      編輯
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12.5 2.5l3 3L6 15H3v-3z" />
+      </svg>
+    </button>
+    <hr />
+    <button type="button" class="danger">
+      刪除
+      <svg
+        width="18"
+        height="20"
+        viewBox="0 0 18 20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M2 4.5h14M7 4.5V2.5h4v2M4 4.5l1 13.5h8l1-13.5" />
+      </svg>
+    </button>
+  </div>
+</div>
+`,"./ios/search-field.html":`<search class="search">
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 15 15"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="6.5" cy="6.5" r="5" />
+    <path d="m10.3 10.3 3.7 3.7" />
+  </svg>
+  <input type="search" placeholder="搜尋" aria-label="搜尋" />
+</search>
+`,"./ios/segmented-control.html":`<fieldset class="segmented">
+  <legend class="visually-hidden">期間</legend>
+  <label><input type="radio" name="ios-seg" /> 日</label>
+  <label><input type="radio" name="ios-seg" checked /> 週</label>
+  <label><input type="radio" name="ios-seg" /> 月</label>
+  <label><input type="radio" name="ios-seg" /> 年</label>
+</fieldset>
+`,"./ios/separator.html":`<div class="list" style="width: 260px; padding: 0 16px">
+  <p style="padding: 12px 0">上午會議</p>
+  <hr />
+  <p style="padding: 12px 0">下午報告</p>
+</div>
+`,"./ios/share-sheet.html":`<button type="button" class="btn btn-glass" data-open="ios-share" aria-label="分享">
+  <svg
+    width="18"
+    height="22"
+    viewBox="0 0 18 22"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M9 1.5v12M5 5.5l4-4 4 4M6 9H3v11.5h12V9h-3" />
+  </svg>
+</button>
+<dialog id="ios-share" class="sheet sheet-medium" aria-labelledby="ios-share-title">
+  <div class="grabber" aria-hidden="true"></div>
+  <p id="ios-share-title" class="small muted" style="text-align: center">分享「旅行相簿」</p>
+  <div class="share-targets">
+    <span class="share-target"><span></span>訊息</span>
+    <span class="share-target"><span></span>郵件</span>
+    <span class="share-target"><span></span>備忘錄</span>
+    <span class="share-target"><span></span>更多</span>
+  </div>
+  <ul class="list" style="background: var(--i-fill)">
+    <li><button type="button" class="cell" data-close>拷貝連結</button></li>
+    <li><button type="button" class="cell" data-close>加入共享相簿</button></li>
+  </ul>
+</dialog>
+`,"./ios/share-sheet.thumb.html":`<div class="screen">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="content"></div>
+  <div class="dim"></div>
+  <div class="sheet sheet-medium">
+    <div class="grabber" aria-hidden="true"></div>
+    <p class="small muted" style="text-align: center">分享「旅行相簿」</p>
+    <div class="share-targets">
+      <span class="share-target"><span></span>訊息</span>
+      <span class="share-target"><span></span>郵件</span>
+      <span class="share-target"><span></span>備忘錄</span>
+      <span class="share-target"><span></span>更多</span>
+    </div>
+    <ul class="list" style="background: var(--i-fill)">
+      <li><button type="button" class="cell">拷貝連結</button></li>
+      <li><button type="button" class="cell">加入共享相簿</button></li>
+    </ul>
+  </div>
+</div>
+`,"./ios/sidebar.html":`<div class="screen screen-wide">
+  <div class="sidebar-layout">
+    <nav class="ipad-sidebar" aria-label="側邊欄">
+      <h3>郵件</h3>
+      <a href="#ios-sidebar" aria-current="page">收件匣</a>
+      <a href="#ios-sidebar">已傳送</a>
+      <a href="#ios-sidebar">草稿</a>
+      <a href="#ios-sidebar">垃圾桶</a>
+    </nav>
+    <div class="ipad-detail"><p class="muted">收件匣（12）</p></div>
+  </div>
+</div>
+`,"./ios/skeleton.html":`<div class="list" style="width: 280px" aria-busy="true" aria-label="載入中">
+  <div class="cell">
+    <span class="redacted" style="width: 29px; height: 29px; border-radius: 7px"></span
+    ><span class="redacted" style="width: 140px"></span>
+  </div>
+  <div class="cell">
+    <span class="redacted" style="width: 29px; height: 29px; border-radius: 7px"></span
+    ><span class="redacted" style="width: 100px"></span>
+  </div>
+</div>
+`,"./ios/slider.html":`<label class="stack" style="justify-items: center"
+  >亮度
+  <input type="range" min="0" max="100" value="65" style="--fill: 65%" />
+</label>
+`,"./ios/spinner.html":`<div role="status" class="stack" style="justify-items: center">
+  <span class="spinner" aria-hidden="true"></span>
+  <span class="muted">載入中</span>
+</div>
+`,"./ios/stepper.html":`<label class="stepper" data-stepper>
+  數量
+  <input type="number" min="0" max="10" value="2" readonly />
+  <span class="stepper-buttons">
+    <button type="button" data-step="-1" aria-label="減少">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M2 8h12" />
+      </svg>
+    </button>
+    <button type="button" data-step="1" aria-label="增加">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M8 2v12M2 8h12" />
+      </svg>
+    </button>
+  </span>
+</label>
+`,"./ios/table.html":`<div class="screen screen-short">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <nav class="navbar">
+    <div class="navbar-row"></div>
+    <h3>設定</h3>
+  </nav>
+  <div class="content">
+    <ul class="list">
+      <li>
+        <a class="cell" href="#ios-list"
+          ><span class="cell-icon"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <circle cx="8.5" cy="8.5" r="2.5" />
+              <path
+                d="M8.5 1v2.2M8.5 13.8V16M1 8.5h2.2M13.8 8.5H16M3.2 3.2l1.6 1.6M12.2 12.2l1.6 1.6M3.2 13.8l1.6-1.6M12.2 4.8l1.6-1.6"
+              /></svg></span
+          >一般<span class="trailing"
+            ><svg
+              width="8"
+              height="13"
+              viewBox="0 0 8 13"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m1.5 1.5 5 5-5 5" /></svg></span
+        ></a>
+      </li>
+      <li>
+        <a class="cell" href="#ios-list"
+          ><span class="cell-icon" style="background: var(--i-orange)"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <circle cx="8.5" cy="8.5" r="2.5" />
+              <path
+                d="M8.5 1v2.2M8.5 13.8V16M1 8.5h2.2M13.8 8.5H16M3.2 3.2l1.6 1.6M12.2 12.2l1.6 1.6M3.2 13.8l1.6-1.6M12.2 4.8l1.6-1.6"
+              /></svg></span
+          >通知<span class="trailing"
+            ><svg
+              width="8"
+              height="13"
+              viewBox="0 0 8 13"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m1.5 1.5 5 5-5 5" /></svg></span
+        ></a>
+      </li>
+      <li>
+        <a class="cell" href="#ios-list"
+          ><span class="cell-icon" style="background: var(--i-green)"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <circle cx="8.5" cy="8.5" r="2.5" />
+              <path
+                d="M8.5 1v2.2M8.5 13.8V16M1 8.5h2.2M13.8 8.5H16M3.2 3.2l1.6 1.6M12.2 12.2l1.6 1.6M3.2 13.8l1.6-1.6M12.2 4.8l1.6-1.6"
+              /></svg></span
+          >電池<span class="trailing"
+            >87%<svg
+              width="8"
+              height="13"
+              viewBox="0 0 8 13"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m1.5 1.5 5 5-5 5" /></svg></span
+        ></a>
+      </li>
+    </ul>
+  </div>
+</div>
+`,"./ios/text-field.html":`<div class="stack">
+  <input class="field" placeholder="姓名" aria-label="姓名" />
+  <input class="field" type="email" placeholder="Email" aria-label="Email" />
+</div>
+`,"./ios/toggle-switch.html":`<div class="list" style="width: 280px">
+  <label class="cell switch">飛航模式 <input type="checkbox" role="switch" /></label>
+  <label class="cell switch">Wi‑Fi <input type="checkbox" role="switch" checked /></label>
+</div>
+`,"./ios/toolbar.html":`<div class="screen">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="content"><p class="muted" style="padding-top: 40px; text-align: center">備忘錄內容</p></div>
+  <div class="toolbar" role="toolbar" aria-label="工具列">
+    <button type="button" class="btn btn-glass" aria-label="分享">
+      <svg
+        width="18"
+        height="22"
+        viewBox="0 0 18 22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M9 1.5v12M5 5.5l4-4 4 4M6 9H3v11.5h12V9h-3" />
+      </svg>
+    </button>
+    <button type="button" class="btn btn-glass" aria-label="刪除">
+      <svg
+        width="18"
+        height="20"
+        viewBox="0 0 18 20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M2 4.5h14M7 4.5V2.5h4v2M4 4.5l1 13.5h8l1-13.5" />
+      </svg>
+    </button>
+    <button type="button" class="btn btn-glass" aria-label="新增">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12.5 2.5l3 3L6 15H3v-3z" />
+      </svg>
+    </button>
+  </div>
+</div>
+`,"./ios/top-app-bar.html":`<div class="screen">
+  <div class="statusbar" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+  <nav class="navbar" aria-label="導覽列">
+    <div class="navbar-row">
+      <a href="#ios-nav" class="back popup-trigger"
+        ><svg
+          width="11"
+          height="18"
+          viewBox="0 0 11 18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M9 2 2 9l7 7" />
+        </svg>
+        設定</a
+      >
+      <button type="button" class="btn btn-plain">編輯</button>
+    </div>
+    <h3>一般</h3>
+  </nav>
+  <div class="content">
+    <ul class="list">
+      <li>
+        <a class="cell" href="#ios-list"
+          ><span class="cell-icon"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <circle cx="8.5" cy="8.5" r="2.5" />
+              <path
+                d="M8.5 1v2.2M8.5 13.8V16M1 8.5h2.2M13.8 8.5H16M3.2 3.2l1.6 1.6M12.2 12.2l1.6 1.6M3.2 13.8l1.6-1.6M12.2 4.8l1.6-1.6"
+              /></svg></span
+          >一般<span class="trailing"
+            ><svg
+              width="8"
+              height="13"
+              viewBox="0 0 8 13"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m1.5 1.5 5 5-5 5" /></svg></span
+        ></a>
+      </li>
+      <li>
+        <a class="cell" href="#ios-list"
+          ><span class="cell-icon" style="background: var(--i-orange)"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <circle cx="8.5" cy="8.5" r="2.5" />
+              <path
+                d="M8.5 1v2.2M8.5 13.8V16M1 8.5h2.2M13.8 8.5H16M3.2 3.2l1.6 1.6M12.2 12.2l1.6 1.6M3.2 13.8l1.6-1.6M12.2 4.8l1.6-1.6"
+              /></svg></span
+          >通知<span class="trailing"
+            ><svg
+              width="8"
+              height="13"
+              viewBox="0 0 8 13"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m1.5 1.5 5 5-5 5" /></svg></span
+        ></a>
+      </li>
+      <li>
+        <a class="cell" href="#ios-list"
+          ><span class="cell-icon" style="background: var(--i-green)"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <circle cx="8.5" cy="8.5" r="2.5" />
+              <path
+                d="M8.5 1v2.2M8.5 13.8V16M1 8.5h2.2M13.8 8.5H16M3.2 3.2l1.6 1.6M12.2 12.2l1.6 1.6M3.2 13.8l1.6-1.6M12.2 4.8l1.6-1.6"
+              /></svg></span
+          >電池<span class="trailing"
+            >87%<svg
+              width="8"
+              height="13"
+              viewBox="0 0 8 13"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m1.5 1.5 5 5-5 5" /></svg></span
+        ></a>
+      </li>
+    </ul>
+  </div>
+</div>
+`,"./ios/tree-view.html":`<ul role="tree" aria-label="資料夾" class="tree">
+  <li role="treeitem" aria-expanded="true" tabindex="0">
+    <span class="tree-label">iCloud 雲碟</span>
+    <ul role="group">
+      <li role="treeitem" aria-expanded="false" tabindex="-1">
+        <span class="tree-label">文件</span>
+        <ul role="group">
+          <li role="treeitem" tabindex="-1"><span class="tree-label">履歷.pdf</span></li>
+        </ul>
+      </li>
+      <li role="treeitem" tabindex="-1"><span class="tree-label">照片</span></li>
+    </ul>
+  </li>
+</ul>
+`,"./ios/wheel-picker.html":`<div class="wheel-wrap">
+  <ul class="wheel" data-wheel role="listbox" tabindex="0" aria-label="分鐘" aria-activedescendant="ios-wheel-15">
+    <li role="option" id="ios-wheel-0" aria-selected="false">0 分鐘</li>
+    <li role="option" id="ios-wheel-5" aria-selected="false">5 分鐘</li>
+    <li role="option" id="ios-wheel-10" aria-selected="false">10 分鐘</li>
+    <li role="option" id="ios-wheel-15" aria-selected="true">15 分鐘</li>
+    <li role="option" id="ios-wheel-20" aria-selected="false">20 分鐘</li>
+    <li role="option" id="ios-wheel-25" aria-selected="false">25 分鐘</li>
+    <li role="option" id="ios-wheel-30" aria-selected="false">30 分鐘</li>
+  </ul>
+</div>
+`,"./ios/wheel-picker.thumb.html":`<div class="wheel-wrap">
+  <ul class="wheel" style="padding: 10px 0; overflow: hidden">
+    <li role="option">5 分鐘</li>
+    <li role="option">10 分鐘</li>
+    <li role="option">15 分鐘</li>
+    <li role="option">20 分鐘</li>
+    <li role="option">25 分鐘</li>
+    <li role="option">30 分鐘</li>
+  </ul>
+</div>
+`,"./macos/alert-dialog.html":`<button type="button" class="btn" data-open="mac-alert">清空垃圾桶…</button>
 <dialog
   id="mac-alert"
   class="alert"
