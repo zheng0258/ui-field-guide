@@ -1,0 +1,1239 @@
+/*
+ * iOS demos: CSS recreations of UIKit / SwiftUI components. tools/measure-macos measures AppKit
+ * only, so this palette is hand-written from the iOS system colors. Bars use the floating glass
+ * style; literal values only inside -webkit-backdrop-filter (Safari ignores variables there).
+ */
+.demo-ios {
+  --i-blue: #007aff;
+  --i-green: #34c759;
+  --i-red: #ff3b30;
+  --i-orange: #ff9500;
+  --i-label: #000000;
+  --i-secondary: rgb(60 60 67 / 0.6);
+  --i-tertiary: rgb(60 60 67 / 0.3);
+  --i-separator: rgb(60 60 67 / 0.29);
+  --i-fill: rgb(120 120 128 / 0.16);
+  --i-fill-strong: rgb(120 120 128 / 0.24);
+  --i-bg: #f2f2f7;
+  --i-cell: #ffffff;
+  --i-glass: rgb(255 255 255 / 0.72);
+  --i-sheet: #ffffff;
+
+  color: var(--i-label);
+  font:
+    17px/1.3 system-ui,
+    -apple-system,
+    'Helvetica Neue',
+    sans-serif;
+  accent-color: var(--i-blue);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .demo-ios {
+    --i-blue: #0a84ff;
+    --i-green: #30d158;
+    --i-red: #ff453a;
+    --i-orange: #ff9f0a;
+    --i-label: #ffffff;
+    --i-secondary: rgb(235 235 245 / 0.6);
+    --i-tertiary: rgb(235 235 245 / 0.3);
+    --i-separator: rgb(84 84 88 / 0.65);
+    --i-fill: rgb(118 118 128 / 0.24);
+    --i-fill-strong: rgb(118 118 128 / 0.36);
+    --i-bg: #000000;
+    --i-cell: #1c1c1e;
+    --i-glass: rgb(40 40 40 / 0.7);
+    --i-sheet: #1c1c1e;
+  }
+}
+
+.demo-ios *,
+.demo-ios *::before,
+.demo-ios *::after {
+  box-sizing: border-box;
+}
+
+.demo-ios :where(p, h3) {
+  margin: 0;
+}
+
+.demo-ios svg {
+  display: block;
+  flex: none;
+}
+
+.demo-ios :focus-visible {
+  outline: 3px solid var(--i-blue);
+  outline-offset: 2px;
+}
+
+.demo-ios .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.demo-ios .stack {
+  display: grid;
+  gap: 12px;
+}
+
+.demo-ios .muted {
+  color: var(--i-secondary);
+}
+
+.demo-ios .small {
+  font-size: 13px;
+}
+
+/* Demos sit on the grouped background, as they would in an iOS app. */
+.demo-ios.demo-live,
+.demo-ios.demo-thumb-stage {
+  background: var(--i-bg);
+}
+
+/* Phone frames are tall; zoom them out further so the whole screen fits a thumbnail. */
+.demo-thumb-stage .screen {
+  zoom: 0.62;
+}
+
+/* Screen frame for components that live in an app's chrome. */
+.demo-ios .screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+  border-radius: 36px;
+  background: var(--i-bg);
+  box-shadow:
+    0 0 0 8px #1c1c1e,
+    0 12px 32px rgb(0 0 0 / 0.3);
+  overflow: hidden;
+}
+
+.demo-ios .screen-short {
+  height: 300px;
+}
+
+.demo-ios .screen-wide {
+  width: 420px;
+  height: 280px;
+  border-radius: 20px;
+}
+
+.demo-ios .statusbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 26px 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.demo-ios .content {
+  flex: 1;
+  padding: 0 16px;
+  overflow: hidden;
+}
+
+/* Buttons */
+.demo-ios .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--i-fill);
+  color: var(--i-blue);
+  font: inherit;
+  font-weight: 600;
+}
+
+.demo-ios .btn:active {
+  opacity: 0.6;
+}
+
+.demo-ios .btn-filled {
+  background: var(--i-blue);
+  color: #fff;
+}
+
+.demo-ios .btn-plain {
+  min-height: 44px;
+  padding: 0 4px;
+  background: none;
+  font-weight: 400;
+}
+
+.demo-ios .btn-glass {
+  width: 44px;
+  padding: 0;
+  background: var(--i-glass);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  backdrop-filter: blur(20px) saturate(1.8);
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.08),
+    0 4px 12px rgb(0 0 0 / 0.08);
+  color: var(--i-label);
+}
+
+.demo-ios .btn:disabled {
+  color: var(--i-tertiary);
+}
+
+/* Lists */
+.demo-ios .list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 12px;
+  background: var(--i-cell);
+  overflow: hidden;
+}
+
+.demo-ios .list-header {
+  margin: 14px 16px 6px;
+  color: var(--i-secondary);
+  font-size: 13px;
+}
+
+.demo-ios .cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 16px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.demo-ios .cell + .cell,
+.demo-ios .list > li + li > .cell,
+.demo-ios .list > li + li {
+  box-shadow:
+    inset 16px 0.5px 0 0 var(--i-cell),
+    inset 0 0.5px 0 0 var(--i-separator);
+}
+
+.demo-ios .cell .trailing {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  color: var(--i-secondary);
+}
+
+.demo-ios .cell-icon {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 7px;
+  background: var(--i-blue);
+  color: #fff;
+}
+
+.demo-ios a.cell:active,
+.demo-ios button.cell:active {
+  background: var(--i-fill);
+}
+
+.demo-ios button.cell {
+  width: 100%;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: start;
+}
+
+/* Switch, slider, stepper, segmented */
+.demo-ios .switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.demo-ios .switch input {
+  appearance: none;
+  position: relative;
+  flex: none;
+  width: 51px;
+  height: 31px;
+  margin: 0;
+  border-radius: 999px;
+  background: var(--i-fill-strong);
+  transition: background 0.2s;
+}
+
+.demo-ios .switch input::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 3px 8px rgb(0 0 0 / 0.15),
+    0 1px 1px rgb(0 0 0 / 0.16);
+  transition: translate 0.2s;
+}
+
+.demo-ios .switch input:checked {
+  background: var(--i-green);
+}
+
+.demo-ios .switch input:checked::after {
+  translate: 20px 0;
+}
+
+.demo-ios input[type='range'] {
+  appearance: none;
+  width: 240px;
+  height: 28px;
+  margin: 0;
+  background: transparent;
+}
+
+.demo-ios input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--i-blue) var(--fill, 50%), var(--i-fill-strong) var(--fill, 50%));
+}
+
+.demo-ios input[type='range']::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--i-fill-strong);
+}
+
+.demo-ios input[type='range']::-moz-range-progress {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--i-blue);
+}
+
+.demo-ios input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  margin-top: -12px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0.5px 4px rgb(0 0 0 / 0.12),
+    0 6px 13px rgb(0 0 0 / 0.12);
+}
+
+.demo-ios input[type='range']::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0.5px 4px rgb(0 0 0 / 0.12),
+    0 6px 13px rgb(0 0 0 / 0.12);
+}
+
+.demo-ios .stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.demo-ios .stepper input {
+  width: 40px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  appearance: textfield;
+}
+
+.demo-ios .stepper-buttons {
+  display: flex;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--i-fill);
+}
+
+.demo-ios .stepper-buttons button {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  border: 0;
+  background: none;
+  color: var(--i-label);
+}
+
+.demo-ios .stepper-buttons button + button {
+  box-shadow: inset 0.5px 0 0 var(--i-separator);
+}
+
+.demo-ios .segmented {
+  display: inline-flex;
+  width: 280px;
+  height: 32px;
+  margin: 0;
+  padding: 2px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--i-fill);
+}
+
+.demo-ios .segmented label {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.demo-ios .segmented input {
+  position: absolute;
+  opacity: 0;
+}
+
+.demo-ios .segmented label:has(:checked) {
+  background: var(--i-cell);
+  box-shadow:
+    0 3px 8px rgb(0 0 0 / 0.12),
+    0 0 0 0.5px rgb(0 0 0 / 0.04);
+  font-weight: 600;
+}
+
+.demo-ios .segmented label:has(:focus-visible) {
+  outline: 3px solid var(--i-blue);
+}
+
+/* Text and search fields */
+.demo-ios .field {
+  width: 260px;
+  height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--i-cell);
+  color: var(--i-label);
+  font: inherit;
+}
+
+.demo-ios .field::placeholder,
+.demo-ios .search input::placeholder {
+  color: var(--i-tertiary);
+}
+
+.demo-ios .search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 268px;
+}
+
+.demo-ios .search svg {
+  position: absolute;
+  left: 10px;
+  color: var(--i-secondary);
+}
+
+.demo-ios .search input {
+  width: 100%;
+  height: 36px;
+  padding: 0 10px 0 32px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--i-fill);
+  color: var(--i-label);
+  font: inherit;
+}
+
+/* Menus */
+.demo-ios .menu {
+  min-width: 230px;
+  padding: 6px 0;
+  border: 0;
+  border-radius: 14px;
+  background: var(--i-glass);
+  -webkit-backdrop-filter: blur(30px) saturate(1.8);
+  backdrop-filter: blur(30px) saturate(1.8);
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.08),
+    0 12px 40px rgb(0 0 0 / 0.2);
+  color: var(--i-label);
+}
+
+.demo-ios .menu button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+}
+
+.demo-ios .menu button:is(:hover, :focus-visible) {
+  background: var(--i-fill);
+  outline: none;
+}
+
+.demo-ios .menu .danger {
+  color: var(--i-red);
+}
+
+.demo-ios .menu hr {
+  margin: 4px 0;
+  border: 0;
+  border-top: 6px solid var(--i-fill);
+}
+
+.demo-ios .menu .check-slot {
+  width: 16px;
+  color: var(--i-label);
+}
+
+.demo-ios .menu-floating {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+}
+
+.demo-ios .menu-static {
+  position: static;
+}
+
+@supports (position-area: block-end) {
+  .demo-ios .menu:not(.menu-floating, .menu-static),
+  .demo-ios .popover:not(.popover-static) {
+    position-area: block-end span-inline-end;
+    position-try-fallbacks: flip-block;
+    margin: 6px 0 0;
+  }
+}
+
+.demo-ios .popup-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  background: none;
+  color: var(--i-blue);
+  font: inherit;
+}
+
+/* Bars */
+.demo-ios .navbar {
+  display: grid;
+  gap: 2px;
+  padding: 4px 16px 8px;
+}
+
+.demo-ios .navbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+}
+
+.demo-ios .navbar h3 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.demo-ios .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.demo-ios .tabbar {
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  left: 16px;
+  display: flex;
+  justify-content: space-around;
+  padding: 6px;
+  border-radius: 999px;
+  background: var(--i-glass);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  backdrop-filter: blur(20px) saturate(1.8);
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.08),
+    0 8px 24px rgb(0 0 0 / 0.12);
+}
+
+.demo-ios .tabbar a {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 1px;
+  min-width: 56px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: var(--i-label);
+  font-size: 10px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.demo-ios .tabbar a[aria-current='page'] {
+  background: var(--i-fill);
+  color: var(--i-blue);
+}
+
+.demo-ios .badge {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--i-red);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+}
+
+.demo-ios .badge-inline {
+  position: static;
+}
+
+.demo-ios .toolbar {
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  left: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Overlays */
+.demo-ios .alert {
+  width: 270px;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: var(--i-glass);
+  -webkit-backdrop-filter: blur(30px) saturate(1.8);
+  backdrop-filter: blur(30px) saturate(1.8);
+  color: var(--i-label);
+  text-align: center;
+  overflow: hidden;
+}
+
+.demo-ios .alert-body {
+  padding: 18px 16px 16px;
+}
+
+.demo-ios .alert h3 {
+  margin-bottom: 2px;
+  font-size: 17px;
+}
+
+.demo-ios .alert p {
+  font-size: 13px;
+}
+
+.demo-ios .alert-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: inset 0 0.5px 0 var(--i-separator);
+}
+
+.demo-ios .alert-actions button {
+  height: 44px;
+  border: 0;
+  background: none;
+  color: var(--i-blue);
+  font: inherit;
+}
+
+.demo-ios .alert-actions button + button {
+  box-shadow: inset 0.5px 0 0 var(--i-separator);
+}
+
+.demo-ios .alert-actions .danger {
+  color: var(--i-red);
+  font-weight: 600;
+}
+
+.demo-ios dialog::backdrop {
+  background: rgb(0 0 0 / 0.3);
+}
+
+.demo-ios .sheet {
+  width: min(100vw, 420px);
+  max-width: none;
+  height: min(85vh, 560px);
+  max-height: none;
+  margin: auto auto 0;
+  padding: 8px 16px 16px;
+  border: 0;
+  border-radius: 28px 28px 0 0;
+  background: var(--i-sheet);
+  color: var(--i-label);
+}
+
+.demo-ios .sheet-medium {
+  height: min(50vh, 360px);
+}
+
+.demo-ios .grabber {
+  width: 36px;
+  height: 5px;
+  margin: 0 auto 8px;
+  border-radius: 3px;
+  background: var(--i-tertiary);
+}
+
+.demo-ios .sheet-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 44px;
+  margin-bottom: 8px;
+}
+
+.demo-ios .sheet-header > :last-child {
+  justify-self: end;
+}
+
+.demo-ios .sheet-header h3 {
+  font-size: 17px;
+}
+
+.demo-ios .actionsheet {
+  width: min(100vw, 360px);
+  max-width: none;
+  margin: auto auto 16px;
+  padding: 0 8px;
+  border: 0;
+  background: none;
+  color: var(--i-label);
+}
+
+.demo-ios .actionsheet-group {
+  margin-bottom: 8px;
+  border-radius: 14px;
+  background: var(--i-glass);
+  -webkit-backdrop-filter: blur(30px) saturate(1.8);
+  backdrop-filter: blur(30px) saturate(1.8);
+  overflow: hidden;
+  text-align: center;
+}
+
+.demo-ios .actionsheet-group p {
+  padding: 14px 16px;
+  color: var(--i-secondary);
+  font-size: 13px;
+}
+
+.demo-ios .actionsheet-group button {
+  width: 100%;
+  height: 56px;
+  border: 0;
+  box-shadow: inset 0 0.5px 0 var(--i-separator);
+  background: none;
+  color: var(--i-blue);
+  font: inherit;
+  font-size: 20px;
+}
+
+.demo-ios .actionsheet-group .danger {
+  color: var(--i-red);
+}
+
+.demo-ios .actionsheet-cancel button {
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.demo-ios .popover {
+  width: 260px;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--i-sheet);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 0.22);
+  color: var(--i-label);
+  overflow: visible;
+}
+
+.demo-ios .popover::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 28px;
+  width: 14px;
+  height: 14px;
+  background: var(--i-sheet);
+  rotate: 45deg;
+  border-radius: 2px;
+}
+
+.demo-ios .popover-static {
+  position: relative;
+}
+
+/* In-screen overlays for thumbnails. */
+.demo-ios .dim {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.3);
+}
+
+.demo-ios .screen .alert,
+.demo-ios .screen .sheet,
+.demo-ios .screen .actionsheet {
+  position: absolute;
+}
+
+.demo-ios .screen .alert {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 240px;
+}
+
+.demo-ios .screen .sheet {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 82%;
+  margin: 0;
+}
+
+.demo-ios .screen .sheet-medium {
+  height: 50%;
+}
+
+.demo-ios .screen .actionsheet {
+  right: 0;
+  bottom: 12px;
+  left: 0;
+  width: auto;
+  margin: 0;
+}
+
+.demo-ios .screen .actionsheet-group button {
+  height: 48px;
+  font-size: 17px;
+}
+
+/* Share sheet */
+.demo-ios .share-targets {
+  display: flex;
+  gap: 14px;
+  margin: 8px 0 16px;
+  overflow: hidden;
+}
+
+.demo-ios .share-target {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.demo-ios .share-target span {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #5ad06a, #2fb34a);
+}
+
+.demo-ios .share-target:nth-child(2) span {
+  background: linear-gradient(135deg, #61b5ff, #1a73e8);
+}
+
+.demo-ios .share-target:nth-child(3) span {
+  background: linear-gradient(135deg, #ffd65a, #f4b400);
+}
+
+.demo-ios .share-target:nth-child(4) span {
+  border-radius: 50%;
+  background: var(--i-fill-strong);
+}
+
+/* Wheel picker */
+.demo-ios .wheel {
+  position: relative;
+  width: 200px;
+  height: 180px;
+  margin: 0;
+  padding: 74px 0;
+  list-style: none;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  mask: linear-gradient(transparent, #000 35%, #000 65%, transparent);
+  text-align: center;
+}
+
+.demo-ios .wheel::-webkit-scrollbar {
+  display: none;
+}
+
+.demo-ios .wheel [role='option'] {
+  height: 32px;
+  line-height: 32px;
+  scroll-snap-align: center;
+  font-size: 21px;
+}
+
+.demo-ios .wheel-wrap {
+  position: relative;
+}
+
+.demo-ios .wheel-wrap::before {
+  content: '';
+  position: absolute;
+  top: 74px;
+  right: 8px;
+  left: 8px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--i-fill);
+  pointer-events: none;
+}
+
+/* Page control, gauge, progress, spinner, misc */
+.demo-ios .carousel {
+  width: 260px;
+}
+
+.demo-ios .slide {
+  display: grid;
+  place-items: center;
+  height: 150px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.demo-ios .slide[hidden] {
+  display: none;
+}
+
+.demo-ios .slide-a {
+  background: linear-gradient(135deg, #ff9a5a, #ff5e62);
+}
+
+.demo-ios .slide-b {
+  background: linear-gradient(135deg, #5ac8fa, #007aff);
+}
+
+.demo-ios .slide-c {
+  background: linear-gradient(135deg, #a78bfa, #5856d6);
+}
+
+.demo-ios .page-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 10px auto 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--i-fill);
+}
+
+.demo-ios .page-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--i-tertiary);
+}
+
+.demo-ios .page-dots button[aria-current='true'] {
+  background: var(--i-label);
+}
+
+.demo-ios .gauge {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+}
+
+.demo-ios .gauge svg {
+  position: absolute;
+  inset: 0;
+  rotate: 135deg;
+}
+
+.demo-ios .gauge strong {
+  font-size: 24px;
+}
+
+.demo-ios progress {
+  appearance: none;
+  width: 240px;
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--i-fill-strong);
+  overflow: hidden;
+}
+
+.demo-ios progress::-webkit-progress-bar {
+  background: var(--i-fill-strong);
+}
+
+.demo-ios progress::-webkit-progress-value {
+  background: var(--i-blue);
+}
+
+.demo-ios progress::-moz-progress-bar {
+  background: var(--i-blue);
+}
+
+.demo-ios .spinner {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: conic-gradient(var(--i-secondary), transparent 85%);
+  mask:
+    repeating-conic-gradient(#000 0 18deg, transparent 18deg 45deg), radial-gradient(circle, transparent 40%, #000 41%);
+  mask-composite: intersect;
+  animation: demo-ios-spin 1s steps(8) infinite;
+}
+
+@keyframes demo-ios-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.demo-ios .groupbox {
+  display: grid;
+  gap: 10px;
+  width: 260px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--i-fill);
+}
+
+.demo-ios .groupbox-label {
+  font-weight: 600;
+}
+
+.demo-ios .redacted {
+  display: inline-block;
+  height: 0.9em;
+  border-radius: 4px;
+  background: var(--i-fill-strong);
+  vertical-align: middle;
+}
+
+.demo-ios .colorwell {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  border: 0;
+  border-radius: 50%;
+  background: conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
+}
+
+.demo-ios .colorwell::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.demo-ios .colorwell::-webkit-color-swatch {
+  border: 2px solid var(--i-cell);
+  border-radius: 50%;
+}
+
+.demo-ios .colorwell::-moz-color-swatch {
+  border: 2px solid var(--i-cell);
+  border-radius: 50%;
+}
+
+.demo-ios .date-chip {
+  height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--i-fill);
+  color: var(--i-label);
+  font: inherit;
+}
+
+.demo-ios details {
+  width: 280px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background: var(--i-cell);
+}
+
+.demo-ios summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  list-style: none;
+}
+
+.demo-ios summary::-webkit-details-marker {
+  display: none;
+}
+
+.demo-ios summary::after,
+.demo-ios .tree [aria-expanded] > .tree-label::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: solid var(--i-blue);
+  border-width: 2px 2px 0 0;
+  rotate: 45deg;
+  transition: rotate 0.15s;
+}
+
+.demo-ios details[open] > summary::after,
+.demo-ios .tree [aria-expanded='true'] > .tree-label::after {
+  rotate: 135deg;
+}
+
+.demo-ios details > :not(summary) {
+  padding-bottom: 12px;
+}
+
+.demo-ios .tree,
+.demo-ios .tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-ios .tree {
+  width: 280px;
+  border-radius: 12px;
+  background: var(--i-cell);
+  overflow: hidden;
+}
+
+.demo-ios .tree ul {
+  padding-left: 20px;
+}
+
+.demo-ios .tree .tree-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0 16px;
+  box-shadow: inset 0 -0.5px 0 var(--i-separator);
+}
+
+.demo-ios .tree [aria-expanded='false'] > [role='group'] {
+  display: none;
+}
+
+.demo-ios .sidebar-layout {
+  display: flex;
+  height: 100%;
+}
+
+.demo-ios .ipad-sidebar {
+  width: 150px;
+  padding: 16px 8px;
+  background: var(--i-bg);
+  box-shadow: inset -0.5px 0 0 var(--i-separator);
+}
+
+.demo-ios .ipad-sidebar h3 {
+  margin: 0 8px 8px;
+  font-size: 22px;
+}
+
+.demo-ios .ipad-sidebar a {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 10px;
+  color: inherit;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.demo-ios .ipad-sidebar a[aria-current='page'] {
+  background: var(--i-blue);
+  color: #fff;
+}
+
+.demo-ios .ipad-detail {
+  flex: 1;
+  padding: 16px;
+  background: var(--i-cell);
+}
+
+.demo-ios hr {
+  margin: 0;
+  border: 0;
+  border-top: 0.5px solid var(--i-separator);
+}
+
+.demo-ios .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-ios .spinner {
+    animation: none;
+  }
+
+  .demo-ios *,
+  .demo-ios *::before,
+  .demo-ios *::after {
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .demo-ios :is(.menu, .tabbar, .alert, .actionsheet-group, .btn-glass) {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--i-cell);
+  }
+}
+
+@media (forced-colors: active) {
+  .demo-ios :is(.btn, .field, .search input, .segmented, .stepper-buttons, .menu, .alert, .sheet, .popover, .tabbar) {
+    border: 1px solid ButtonText;
+  }
+
+  .demo-ios .segmented label:has(:checked),
+  .demo-ios .switch input:checked,
+  .demo-ios .tabbar a[aria-current='page'] {
+    background: Highlight;
+    color: HighlightText;
+  }
+}

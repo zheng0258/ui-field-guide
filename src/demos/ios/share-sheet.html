@@ -1,0 +1,29 @@
+<button type="button" class="btn btn-glass" data-open="ios-share" aria-label="分享">
+  <svg
+    width="18"
+    height="22"
+    viewBox="0 0 18 22"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M9 1.5v12M5 5.5l4-4 4 4M6 9H3v11.5h12V9h-3" />
+  </svg>
+</button>
+<dialog id="ios-share" class="sheet sheet-medium" aria-labelledby="ios-share-title">
+  <div class="grabber" aria-hidden="true"></div>
+  <p id="ios-share-title" class="small muted" style="text-align: center">分享「旅行相簿」</p>
+  <div class="share-targets">
+    <span class="share-target"><span></span>訊息</span>
+    <span class="share-target"><span></span>郵件</span>
+    <span class="share-target"><span></span>備忘錄</span>
+    <span class="share-target"><span></span>更多</span>
+  </div>
+  <ul class="list" style="background: var(--i-fill)">
+    <li><button type="button" class="cell" data-close>拷貝連結</button></li>
+    <li><button type="button" class="cell" data-close>加入共享相簿</button></li>
+  </ul>
+</dialog>

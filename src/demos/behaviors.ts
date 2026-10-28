@@ -246,6 +246,53 @@ function rangeFill(root: HTMLElement): Cleanup {
   })
 }
 
+/**
+ * Wheel pickers: `[data-wheel]` is a scroll-snap listbox. The option nearest the center is
+ * selected after scrolling; Arrow keys move one option.
+ */
+function wheels(root: HTMLElement): Cleanup {
+  const options = (wheel: HTMLElement) => [...wheel.querySelectorAll<HTMLElement>('[role="option"]')]
+  const settle = (wheel: HTMLElement) => {
+    const center = wheel.scrollTop + wheel.clientHeight / 2
+    const items = options(wheel)
+    const nearest = items.reduce((best, item) =>
+      Math.abs(item.offsetTop + item.offsetHeight / 2 - center) <
+      Math.abs(best.offsetTop + best.offsetHeight / 2 - center)
+        ? item
+        : best,
+    )
+    items.forEach((item) => item.setAttribute('aria-selected', String(item === nearest)))
+    wheel.setAttribute('aria-activedescendant', nearest.id)
+  }
+  const wheelsIn = [...root.querySelectorAll<HTMLElement>('[data-wheel]')]
+  wheelsIn.forEach((wheel) => {
+    const selected = wheel.querySelector<HTMLElement>('[aria-selected="true"]')
+    if (selected) wheel.scrollTop = selected.offsetTop - (wheel.clientHeight - selected.offsetHeight) / 2
+  })
+  const timers = new Map<HTMLElement, number>()
+  const onScroll = (event: Event) => {
+    const wheel = event.target as HTMLElement
+    window.clearTimeout(timers.get(wheel))
+    timers.set(
+      wheel,
+      window.setTimeout(() => settle(wheel), 120),
+    )
+  }
+  wheelsIn.forEach((wheel) => wheel.addEventListener('scroll', onScroll))
+  const offKey = on(root, 'keydown', (event) => {
+    const wheel = closestIn(root, event.target, '[data-wheel]')
+    if (!wheel || !['ArrowUp', 'ArrowDown'].includes(event.key)) return
+    event.preventDefault()
+    const step = options(wheel)[0]?.offsetHeight ?? 32
+    wheel.scrollBy({ top: event.key === 'ArrowDown' ? step : -step, behavior: 'smooth' })
+  })
+  return () => {
+    offKey()
+    wheelsIn.forEach((wheel) => wheel.removeEventListener('scroll', onScroll))
+    timers.forEach((timer) => window.clearTimeout(timer))
+  }
+}
+
 /** Attaches every behavior to a live demo root; returns one cleanup for unmount. */
 export function mountDemo(root: HTMLElement): Cleanup {
   const cleanups = [
@@ -260,6 +307,7 @@ export function mountDemo(root: HTMLElement): Cleanup {
     steppers,
     selectableRows,
     rangeFill,
+    wheels,
   ].map((behavior) => behavior(root))
   return () => cleanups.forEach((cleanup) => cleanup())
 }

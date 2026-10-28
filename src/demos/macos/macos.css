@@ -85,6 +85,12 @@
   text-align: end;
 }
 
+/* Demos sit on the window background, as they would inside a macOS window. */
+.demo-macos.demo-live,
+.demo-macos.demo-thumb-stage {
+  background: var(--m-window);
+}
+
 /* Window chrome */
 .demo-macos .window {
   width: 380px;

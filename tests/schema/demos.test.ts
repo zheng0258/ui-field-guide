@@ -6,7 +6,7 @@ import { validateContent } from '../../src/content/validate'
 import { PLATFORMS, type Platform } from '../../src/schema'
 
 /** Platforms whose demo set is complete; every concept on them must have a demo. */
-const COMPLETE: readonly Platform[] = ['web', 'macos']
+const COMPLETE: readonly Platform[] = ['web', 'macos', 'ios']
 
 const { concepts } = validateContent(readContentFiles())
 const demosRoot = join(import.meta.dirname, '..', '..', 'src', 'demos')
