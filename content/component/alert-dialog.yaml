@@ -1,0 +1,32 @@
+id: alert-dialog
+kind: component
+name: { en: 'Alert dialog', zh: '警示對話框' }
+aliases: ['alert', 'confirm dialog', '確認視窗']
+describe:
+  - '跳出來問你「確定要刪除嗎？」的小視窗'
+category: overlays
+confusedWith: ['modal-dialog', 'toast']
+platforms:
+  macos:
+    name: 'Alert'
+    api: { 'appkit': 'NSAlert', 'swiftui': '.alert' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/alerts
+  ios:
+    name: 'Alert'
+    api: { 'uikit': 'UIAlertController (.alert)', 'swiftui': '.alert' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/alerts
+  android:
+    name: 'Dialog'
+    api: { 'compose': 'AlertDialog', 'view': 'MaterialAlertDialogBuilder' }
+    guideline: https://m3.material.io/components/dialogs/overview
+  web:
+    name: 'Alert dialog'
+    api: { 'html': '<dialog> + showModal()', 'aria': 'alertdialog' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/
+prompt:
+  keywords: ['alert dialog', 'role alertdialog', 'confirmation dialog']
+  descriptors: ['short question with two buttons', 'destructive action in red', 'focus starts on the safe button']
+  avoid: ['toast']
+  coding: null
+  image: null
+status: draft

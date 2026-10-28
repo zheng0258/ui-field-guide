@@ -9,7 +9,7 @@ Communicate with the user in Traditional Chinese.
 - Content lives in `content/<kind>/<id>.yaml`, validated by Zod in `src/schema/`.
 - Never hard-code component names or API mappings in Vue files; read them from content.
 - Research and decisions: `docs/handoff.md` (read first), platform tables in `docs/platforms/`,
-  architecture decisions in `docs/decisions/`.
+  architecture decisions in `docs/decisions/`, research snapshot in `docs/research.md`.
 
 ## Stack
 
@@ -22,6 +22,11 @@ XState v5, plain CSS custom properties (no Tailwind), Fuse.js, Vitest, Playwrigh
   `virtual:content` and fails the build on any issue. Drafts ship only when
   `INCLUDE_DRAFTS=1` (dev, PR previews, and — temporarily — the production deploy in
   `.github/workflows/deploy.yml`; each draft page says it is unverified).
+- Routes are platform-first: `/` → `/<platform>` (grid with thumbnails) → `/<platform>/<id>`
+  (see `docs/decisions/0002-platform-first-flow.md`).
+- Demos are plain HTML in `src/demos/<platform>/<id>.html` (optional `<id>.thumb.html` for the
+  thumbnail), rendered live and shown as source; shared behaviors live in `src/demos/behaviors.ts`
+  and attach by data attributes / ARIA roles. Every concept with a Web entry must have a Web demo.
 - Browser code imports runtime values from `src/schema/constants.ts` (no Zod in the bundle);
   `src/schema/index.ts` is for validation and types.
 - `tools/measure-macos` (Swift) → `tools/measure-macos/output/macos.json` → `scripts/build-tokens.ts`

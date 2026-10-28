@@ -1,0 +1,31 @@
+id: text-field
+kind: component
+name: { en: 'Text field', zh: '文字輸入框' }
+aliases: ['input', 'text input', 'textarea', '輸入框']
+describe:
+  - '可以打字的一格方框'
+category: input
+confusedWith: ['search-field', 'combobox']
+platforms:
+  macos:
+    name: 'Text field'
+    api: { 'appkit': 'NSTextField', 'swiftui': 'TextField' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/text-fields
+  ios:
+    name: 'Text field'
+    api: { 'uikit': 'UITextField', 'swiftui': 'TextField' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/text-fields
+  android:
+    name: 'Text field'
+    api: { 'compose': 'TextField / OutlinedTextField', 'view': 'TextInputLayout' }
+    guideline: https://m3.material.io/components/text-fields/overview
+  web:
+    name: 'Text input'
+    api: { 'html': '<input type="text"> / <textarea>', 'aria': 'textbox' }
+prompt:
+  keywords: ['text field', 'HTML input element', 'labelled text input']
+  descriptors: ['visible label above the field', 'focus ring when active']
+  avoid: []
+  coding: null
+  image: null
+status: draft

@@ -1,0 +1,19 @@
+id: file-upload
+kind: component
+name: { en: 'File upload', zh: '檔案上傳' }
+aliases: ['dropzone', 'file input', '上傳']
+describe:
+  - '選一個檔案或把檔案拖進來的區塊'
+category: input
+confusedWith: []
+platforms:
+  web:
+    name: 'File upload'
+    api: { 'html': '<input type="file">' }
+prompt:
+  keywords: ['file upload', 'HTML input type file', 'drag and drop zone']
+  descriptors: ['dashed drop area', 'Choose file button']
+  avoid: []
+  coding: null
+  image: null
+status: draft

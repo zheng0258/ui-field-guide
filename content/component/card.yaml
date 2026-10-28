@@ -1,0 +1,31 @@
+id: card
+kind: component
+name: { en: 'Card', zh: '卡片' }
+aliases: ['tile', 'box', 'group box', '卡片']
+describe:
+  - '一個有邊框或陰影的區塊，裝一組相關內容'
+category: containers
+confusedWith: ['feed']
+platforms:
+  macos:
+    name: 'Box'
+    api: { 'appkit': 'NSBox', 'swiftui': 'GroupBox' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/boxes
+  ios:
+    name: 'Group box'
+    api: { 'swiftui': 'GroupBox' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/boxes
+  android:
+    name: 'Card'
+    api: { 'compose': 'Card / ElevatedCard / OutlinedCard', 'view': 'MaterialCardView' }
+    guideline: https://m3.material.io/components/cards/overview
+  web:
+    name: 'Card'
+    api: { 'html': '<article>' }
+prompt:
+  keywords: ['card', 'article element card layout']
+  descriptors: ['rounded corners', 'title, text and action', 'subtle border or shadow']
+  avoid: []
+  coding: null
+  image: null
+status: draft

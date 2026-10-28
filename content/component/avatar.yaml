@@ -1,0 +1,19 @@
+id: avatar
+kind: component
+name: { en: 'Avatar', zh: '頭像' }
+aliases: ['profile picture', 'user icon', '大頭貼']
+describe:
+  - '圓形的使用者照片或姓名縮寫'
+category: containers
+confusedWith: ['badge']
+platforms:
+  web:
+    name: 'Avatar'
+    api: { 'html': '<img alt>' }
+prompt:
+  keywords: ['avatar', 'profile picture', 'user initials circle']
+  descriptors: ['circular image', 'initials fallback']
+  avoid: []
+  coding: null
+  image: null
+status: draft

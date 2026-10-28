@@ -1,0 +1,19 @@
+id: pagination
+kind: component
+name: { en: 'Pagination', zh: '分頁器' }
+aliases: ['pager', '頁碼']
+describe:
+  - '一排頁碼，加上上一頁、下一頁'
+category: navigation
+confusedWith: ['breadcrumb']
+platforms:
+  web:
+    name: 'Pagination'
+    api: { 'html': '<nav> + <a>', 'aria': 'navigation + aria-current="page"' }
+prompt:
+  keywords: ['pagination', 'pager navigation']
+  descriptors: ['previous and next links', 'numbered page links, current page highlighted']
+  avoid: []
+  coding: null
+  image: null
+status: draft

@@ -1,0 +1,31 @@
+id: popover
+kind: component
+name: { en: 'Popover', zh: '浮出框' }
+aliases: ['flyout', 'popper', '泡泡框']
+describe:
+  - '點了按鈕後在旁邊冒出來的小框，點外面就關掉'
+category: overlays
+confusedWith: ['tooltip', 'modal-dialog']
+platforms:
+  macos:
+    name: 'Popover'
+    api: { 'appkit': 'NSPopover', 'swiftui': '.popover' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/popovers
+  ios:
+    name: 'Popover'
+    api: { 'uikit': 'UIPopoverPresentationController', 'swiftui': '.popover' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/popovers
+  android:
+    name: 'Rich tooltip'
+    api: { 'compose': 'RichTooltip' }
+    guideline: https://m3.material.io/components/tooltips/overview
+  web:
+    name: 'Popover'
+    api: { 'html': 'popover attribute', 'aria': 'depends on content' }
+prompt:
+  keywords: ['popover', 'HTML popover attribute', 'anchor positioning']
+  descriptors: ['anchored to trigger', 'light dismiss on outside click']
+  avoid: ['modal-dialog']
+  coding: null
+  image: null
+status: draft

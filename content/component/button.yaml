@@ -5,7 +5,7 @@ aliases: [push button, action button, CTA, 按鍵]
 describe:
   - 按一下就執行一個動作
 category: actions
-confusedWith: [pull-down-menu]
+confusedWith: [pull-down-menu, link]
 platforms:
   macos:
     name: Push button

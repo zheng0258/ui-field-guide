@@ -1,0 +1,20 @@
+id: feed
+kind: component
+name: { en: 'Feed', zh: '動態牆' }
+aliases: ['infinite scroll', 'timeline', '動態消息']
+describe:
+  - '一直往下滑會一直載入新文章的列表'
+category: data
+confusedWith: ['carousel']
+platforms:
+  web:
+    name: 'Feed'
+    api: { 'aria': 'feed + article' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/feed/
+prompt:
+  keywords: ['feed', 'APG feed pattern', 'infinite scroll list of articles']
+  descriptors: ['stack of article cards', 'loads more on scroll']
+  avoid: []
+  coding: null
+  image: null
+status: draft

@@ -1,0 +1,28 @@
+id: tree-view
+kind: component
+name: { en: 'Tree view', zh: '樹狀視圖' }
+aliases: ['file tree', 'outline', '樹狀清單']
+describe:
+  - '可以一層一層展開的清單，像檔案總管'
+category: data
+confusedWith: ['treegrid', 'disclosure']
+platforms:
+  macos:
+    name: 'Outline view'
+    api: { 'appkit': 'NSOutlineView', 'swiftui': 'OutlineGroup' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/outline-views
+  ios:
+    name: 'Outline group'
+    api: { 'swiftui': 'OutlineGroup' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/outline-views
+  web:
+    name: 'Tree view'
+    api: { 'aria': 'tree + treeitem + group' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
+prompt:
+  keywords: ['tree view', 'APG treeview pattern', 'role tree']
+  descriptors: ['nested expandable nodes', 'arrow keys expand and collapse']
+  avoid: ['disclosure']
+  coding: null
+  image: null
+status: draft

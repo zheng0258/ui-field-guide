@@ -1,0 +1,24 @@
+id: breadcrumb
+kind: component
+name: { en: 'Breadcrumb', zh: '麵包屑' }
+aliases: ['path', '路徑導覽']
+describe:
+  - '顯示「首頁 > 分類 > 目前頁面」的路徑'
+category: navigation
+confusedWith: ['pagination']
+platforms:
+  macos:
+    name: 'Path control'
+    api: { 'appkit': 'NSPathControl' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/path-controls
+  web:
+    name: 'Breadcrumb'
+    api: { 'html': '<nav> + <ol>', 'aria': 'navigation + aria-current="page"' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/
+prompt:
+  keywords: ['breadcrumb', 'nav aria-label breadcrumb', 'ordered list']
+  descriptors: ['separators between links', 'current page with aria-current']
+  avoid: []
+  coding: null
+  image: null
+status: draft

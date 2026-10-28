@@ -1,0 +1,28 @@
+id: tooltip
+kind: component
+name: { en: 'Tooltip', zh: '工具提示' }
+aliases: ['hint', 'help tag', '提示框']
+describe:
+  - '滑鼠停在按鈕上時冒出的一小段說明文字'
+category: overlays
+confusedWith: ['popover']
+platforms:
+  macos:
+    name: 'Help tag'
+    api: { 'appkit': 'NSView.toolTip', 'swiftui': '.help' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/offering-help
+  android:
+    name: 'Plain tooltip'
+    api: { 'compose': 'PlainTooltip', 'view': 'TooltipCompat' }
+    guideline: https://m3.material.io/components/tooltips/overview
+  web:
+    name: 'Tooltip'
+    api: { 'html': 'popover="hint"', 'aria': 'tooltip' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/
+prompt:
+  keywords: ['tooltip', 'popover hint', 'APG tooltip pattern']
+  descriptors: ['short text', 'shows on hover and keyboard focus']
+  avoid: ['popover']
+  coding: null
+  image: null
+status: draft

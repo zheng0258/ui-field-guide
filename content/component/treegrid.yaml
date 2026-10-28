@@ -1,0 +1,20 @@
+id: treegrid
+kind: component
+name: { en: 'Treegrid', zh: '樹狀表格' }
+aliases: ['tree table', '可展開表格']
+describe:
+  - '有很多欄位、每一列又能展開子列的表格'
+category: data
+confusedWith: ['tree-view', 'data-grid']
+platforms:
+  web:
+    name: 'Treegrid'
+    api: { 'aria': 'treegrid' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/
+prompt:
+  keywords: ['treegrid', 'APG treegrid pattern', 'expandable table rows']
+  descriptors: ['rows expand to show child rows', 'multiple columns']
+  avoid: ['tree-view']
+  coding: null
+  image: null
+status: draft

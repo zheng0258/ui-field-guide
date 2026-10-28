@@ -5,7 +5,7 @@ aliases: [range, range slider, scrubber, 拉桿, 滑動條]
 describe:
   - 拖動圓點在一條線上調整數值
   - 調音量、亮度那種橫條
-category: value-input
+category: input
 confusedWith: [stepper]
 platforms:
   macos:

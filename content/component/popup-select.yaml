@@ -5,7 +5,7 @@ aliases: [dropdown, select, picker, 下拉選單, 下拉]
 describe:
   - 點開後選一個值，按鈕上會顯示目前選的那個
   - 一顆按鈕，右邊有上下箭頭，點開是選項清單
-category: selection
+category: input
 confusedWith: [pull-down-menu, combobox]
 platforms:
   macos:

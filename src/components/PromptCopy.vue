@@ -5,12 +5,12 @@ import { PLATFORM_LABELS, PLATFORMS } from '../schema/constants'
 import type { Concept, Platform } from '../schema'
 import { concepts } from '../content/store'
 
-const props = defineProps<{ concept: Concept }>()
+const props = defineProps<{ concept: Concept; platform?: Platform }>()
 
 const available = computed(() =>
   PLATFORMS.filter((platform) => 'platforms' in props.concept && props.concept.platforms?.[platform]),
 )
-const platform = ref<Platform | undefined>(available.value[0])
+const platform = ref<Platform | undefined>(props.platform ?? available.value[0])
 const prompt = computed(() => buildCodingPrompt(props.concept, concepts, platform.value))
 const status = ref('')
 

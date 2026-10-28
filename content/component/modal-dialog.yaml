@@ -1,0 +1,32 @@
+id: modal-dialog
+kind: component
+name: { en: 'Modal dialog', zh: '對話框' }
+aliases: ['modal', 'lightbox', 'dialog', '彈窗', '跳窗']
+describe:
+  - '蓋在整個畫面上、要處理完才能回去的視窗'
+category: overlays
+confusedWith: ['drawer', 'popover', 'alert-dialog']
+platforms:
+  macos:
+    name: 'Sheet'
+    api: { 'appkit': 'NSWindow.beginSheet', 'swiftui': '.sheet' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/sheets
+  ios:
+    name: 'Sheet'
+    api: { 'uikit': 'UISheetPresentationController', 'swiftui': '.sheet' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/sheets
+  android:
+    name: 'Dialog'
+    api: { 'compose': 'Dialog', 'view': 'DialogFragment' }
+    guideline: https://m3.material.io/components/dialogs/overview
+  web:
+    name: 'Modal dialog'
+    api: { 'html': '<dialog> + showModal()', 'aria': 'dialog + aria-modal' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+prompt:
+  keywords: ['modal dialog', 'HTML dialog element', 'showModal', 'APG dialog pattern']
+  descriptors: ['focus trapped inside', 'Escape closes', 'backdrop dims page']
+  avoid: ['popover']
+  coding: null
+  image: null
+status: draft

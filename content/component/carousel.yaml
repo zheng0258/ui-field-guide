@@ -1,0 +1,28 @@
+id: carousel
+kind: component
+name: { en: 'Carousel', zh: '輪播' }
+aliases: ['slideshow', 'slider', '輪播圖']
+describe:
+  - '一次顯示一張，可以左右切換的圖片或卡片'
+category: data
+confusedWith: ['feed', 'tabs']
+platforms:
+  ios:
+    name: 'Page control'
+    api: { 'uikit': 'UIPageControl', 'swiftui': 'TabView(.page)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/page-controls
+  android:
+    name: 'Carousel'
+    api: { 'compose': 'HorizontalMultiBrowseCarousel', 'view': 'CarouselLayoutManager' }
+    guideline: https://m3.material.io/components/carousel/overview
+  web:
+    name: 'Carousel'
+    api: { 'aria': 'region + aria-roledescription="carousel"' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/carousel/
+prompt:
+  keywords: ['carousel', 'APG carousel pattern', 'slideshow']
+  descriptors: ['one slide visible', 'previous and next buttons', 'dot indicators']
+  avoid: []
+  coding: null
+  image: null
+status: draft

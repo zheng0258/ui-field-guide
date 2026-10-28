@@ -1,0 +1,27 @@
+id: drawer
+kind: component
+name: { en: 'Drawer', zh: '側滑面板' }
+aliases: ['side sheet', 'off-canvas', 'slide-over', '抽屜']
+describe:
+  - '從畫面邊緣滑出來的一整條面板'
+category: overlays
+confusedWith: ['sidebar', 'modal-dialog']
+platforms:
+  macos:
+    name: 'Inspector'
+    api: { 'swiftui': '.inspector' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/sidebars
+  android:
+    name: 'Side sheet'
+    api: { 'view': 'SideSheetDialog' }
+    guideline: https://m3.material.io/components/side-sheets/overview
+  web:
+    name: 'Drawer'
+    api: { 'html': '<dialog> + showModal()', 'aria': 'dialog' }
+prompt:
+  keywords: ['drawer', 'off-canvas side panel', 'dialog element']
+  descriptors: ['slides in from edge', 'scrim behind']
+  avoid: ['sidebar']
+  coding: null
+  image: null
+status: draft

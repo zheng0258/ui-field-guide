@@ -9,8 +9,8 @@ describe('content/', () => {
     expect(issues, formatIssues(issues)).toEqual([])
   })
 
-  it('holds the first batch of 10 component concepts', () => {
-    expect(concepts.filter((concept) => concept.kind === 'component').length).toBeGreaterThanOrEqual(10)
+  it('covers the Web component list (about 45 items)', () => {
+    expect(concepts.filter((concept) => concept.kind === 'component').length).toBeGreaterThanOrEqual(45)
   })
 
   it('fills the Web column for every component', () => {

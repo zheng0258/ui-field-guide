@@ -1,0 +1,30 @@
+id: badge
+kind: component
+name: { en: 'Badge', zh: '徽章' }
+aliases: ['chip', 'tag', 'pill', 'label', '標籤']
+describe:
+  - '小小的圓角標籤，標示狀態或分類'
+category: containers
+confusedWith: ['avatar']
+platforms:
+  macos:
+    name: 'Token'
+    api: { 'appkit': 'NSTokenField' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/token-fields
+  ios:
+    name: 'Badge'
+    api: { 'uikit': 'UITabBarItem.badgeValue', 'swiftui': '.badge' }
+  android:
+    name: 'Chip'
+    api: { 'compose': 'AssistChip / FilterChip / InputChip', 'view': 'Chip' }
+    guideline: https://m3.material.io/components/chips/overview
+  web:
+    name: 'Badge'
+    api: { 'html': '<span>' }
+prompt:
+  keywords: ['badge', 'tag chip', 'status pill']
+  descriptors: ['small rounded label', 'short text or count']
+  avoid: []
+  coding: null
+  image: null
+status: draft

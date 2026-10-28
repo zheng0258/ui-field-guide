@@ -5,7 +5,7 @@ aliases: [spin button, number spinner, increment decrement, 加減按鈕]
 describe:
   - 一組加和減的小按鈕，一次調一格
   - 上下兩個小箭頭，旁邊通常有數字欄
-category: value-input
+category: input
 confusedWith: [slider]
 platforms:
   macos:
@@ -19,7 +19,7 @@ platforms:
     api: { uikit: UIStepper, swiftui: Stepper }
     guideline: https://developer.apple.com/design/human-interface-guidelines/steppers
   web:
-    name: Spinbutton
+    name: Number input
     api: { html: '<input type="number">', aria: spinbutton }
     guideline: https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/
 prompt:

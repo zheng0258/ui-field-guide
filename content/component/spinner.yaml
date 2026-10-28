@@ -1,0 +1,31 @@
+id: spinner
+kind: component
+name: { en: 'Spinner', zh: '載入指示' }
+aliases: ['loader', 'activity indicator', '轉圈圈']
+describe:
+  - '一直轉圈圈，表示正在載入'
+category: status
+confusedWith: ['progress-indicator', 'skeleton']
+platforms:
+  macos:
+    name: 'Spinner'
+    api: { 'appkit': 'NSProgressIndicator (.spinning)', 'swiftui': 'ProgressView()' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/progress-indicators
+  ios:
+    name: 'Activity indicator'
+    api: { 'uikit': 'UIActivityIndicatorView', 'swiftui': 'ProgressView()' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/progress-indicators
+  android:
+    name: 'Loading indicator'
+    api: { 'compose': 'CircularProgressIndicator', 'view': 'CircularProgressIndicator' }
+    guideline: https://m3.material.io/components/progress-indicators/overview
+  web:
+    name: 'Spinner'
+    api: { 'aria': 'status' }
+prompt:
+  keywords: ['loading spinner', 'role status', 'indeterminate progress']
+  descriptors: ['rotating ring', 'respects reduced motion']
+  avoid: ['skeleton']
+  coding: null
+  image: null
+status: draft

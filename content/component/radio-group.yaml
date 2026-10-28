@@ -1,0 +1,28 @@
+id: radio-group
+kind: component
+name: { en: 'Radio group', zh: '單選群組' }
+aliases: ['radio buttons', 'option buttons', '單選鈕']
+describe:
+  - '一組小圓圈，只能選其中一個'
+category: input
+confusedWith: ['checkbox', 'segmented-control']
+platforms:
+  macos:
+    name: 'Radio buttons'
+    api: { 'appkit': 'NSButton (radio)', 'swiftui': 'Picker(.radioGroup)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/toggles
+  android:
+    name: 'Radio button'
+    api: { 'compose': 'RadioButton', 'view': 'MaterialRadioButton' }
+    guideline: https://m3.material.io/components/radio-button/overview
+  web:
+    name: 'Radio group'
+    api: { 'html': '<fieldset> + <input type="radio">', 'aria': 'radiogroup + radio' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/radio/
+prompt:
+  keywords: ['radio group', 'HTML radio inputs in a fieldset']
+  descriptors: ['round buttons', 'exactly one option selected']
+  avoid: ['checkbox']
+  coding: null
+  image: null
+status: draft

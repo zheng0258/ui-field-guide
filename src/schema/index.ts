@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { GUIDELINE_HOSTS } from './constants'
+import { CATEGORIES, GUIDELINE_HOSTS } from './constants'
 
 export * from './constants'
 
@@ -52,7 +52,7 @@ const BaseSchema = z.strictObject({
   name: z.strictObject({ en: z.string().min(1), zh: z.string().min(1) }),
   aliases: z.array(z.string().min(1)).default([]),
   describe: z.array(z.string().min(1)).default([]),
-  category: z.string().min(1),
+  category: z.enum(CATEGORIES),
   confusedWith: z.array(IdSchema).default([]),
   prompt: PromptSchema,
   status: z.enum(['draft', 'verified']),

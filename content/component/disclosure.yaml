@@ -1,0 +1,28 @@
+id: disclosure
+kind: component
+name: { en: 'Disclosure', zh: '展開收合' }
+aliases: ['show/hide', 'expander', 'toggle', '收合區塊']
+describe:
+  - '點一下標題就展開或收起底下的內容'
+category: disclosure
+confusedWith: ['accordion']
+platforms:
+  macos:
+    name: 'Disclosure control'
+    api: { 'appkit': 'NSButton (bezelStyle .disclosure)', 'swiftui': 'DisclosureGroup' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/disclosure-controls
+  ios:
+    name: 'Disclosure group'
+    api: { 'swiftui': 'DisclosureGroup' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/disclosure-controls
+  web:
+    name: 'Disclosure'
+    api: { 'html': '<details> + <summary>', 'aria': 'button[aria-expanded]' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
+prompt:
+  keywords: ['disclosure', 'details and summary elements', 'disclosure triangle']
+  descriptors: ['triangle rotates when expanded', 'content hidden until opened']
+  avoid: ['accordion']
+  coding: null
+  image: null
+status: draft

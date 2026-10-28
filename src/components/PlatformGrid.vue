@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { PLATFORM_LABELS, PLATFORMS } from '../schema/constants'
+import { PLATFORM_LABELS, PLATFORMS, type Platform } from '../schema/constants'
 import type { ComponentConcept } from '../schema'
 
-defineProps<{ platforms: ComponentConcept['platforms'] }>()
+defineProps<{ id: string; platforms: ComponentConcept['platforms']; current: Platform }>()
 </script>
 
 <template>
@@ -11,12 +11,19 @@ defineProps<{ platforms: ComponentConcept['platforms'] }>()
       v-for="platform in PLATFORMS"
       :key="platform"
       class="platform-card"
-      :class="{ missing: !platforms[platform] }"
+      :class="{ missing: !platforms[platform], current: platform === current }"
       :aria-labelledby="`platform-${platform}`"
     >
-      <h3 :id="`platform-${platform}`" class="platform-label">{{ PLATFORM_LABELS[platform] }}</h3>
+      <h3 :id="`platform-${platform}`" class="platform-label">
+        {{ PLATFORM_LABELS[platform] }}<span v-if="platform === current" class="badge">目前</span>
+      </h3>
       <template v-if="platforms[platform]">
-        <p class="platform-name">{{ platforms[platform]!.name }}</p>
+        <p class="platform-name">
+          <RouterLink v-if="platform !== current" :to="`/${platform}/${id}`">{{
+            platforms[platform]!.name
+          }}</RouterLink>
+          <template v-else>{{ platforms[platform]!.name }}</template>
+        </p>
         <dl class="api-list">
           <template v-for="(symbol, framework) in platforms[platform]!.api" :key="framework">
             <dt>{{ framework }}</dt>

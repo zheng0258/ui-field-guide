@@ -1,0 +1,14 @@
+<div class="tabs">
+  <div role="tablist" aria-label="帳號設定">
+    <button type="button" role="tab" id="tabs-t1" aria-selected="true" aria-controls="tabs-p1">一般</button>
+    <button type="button" role="tab" id="tabs-t2" aria-selected="false" aria-controls="tabs-p2" tabindex="-1">
+      安全性
+    </button>
+    <button type="button" role="tab" id="tabs-t3" aria-selected="false" aria-controls="tabs-p3" tabindex="-1">
+      通知
+    </button>
+  </div>
+  <div role="tabpanel" id="tabs-p1" aria-labelledby="tabs-t1">名稱、語言與時區。</div>
+  <div role="tabpanel" id="tabs-p2" aria-labelledby="tabs-t2" hidden>密碼與雙重驗證。</div>
+  <div role="tabpanel" id="tabs-p3" aria-labelledby="tabs-t3" hidden>Email 與推播通知。</div>
+</div>

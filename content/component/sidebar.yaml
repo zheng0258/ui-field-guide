@@ -1,0 +1,31 @@
+id: sidebar
+kind: component
+name: { en: 'Sidebar', zh: '側邊欄' }
+aliases: ['side navigation', '側欄']
+describe:
+  - '畫面左邊一直在的導覽清單'
+category: navigation
+confusedWith: ['drawer', 'navigation']
+platforms:
+  macos:
+    name: 'Sidebar'
+    api: { 'appkit': 'NSSplitViewController (sidebar)', 'swiftui': 'NavigationSplitView' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/sidebars
+  ios:
+    name: 'Sidebar'
+    api: { 'uikit': 'UISplitViewController', 'swiftui': 'NavigationSplitView' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/sidebars
+  android:
+    name: 'Navigation drawer'
+    api: { 'compose': 'ModalNavigationDrawer', 'view': 'NavigationView' }
+    guideline: https://m3.material.io/components/navigation-drawer/overview
+  web:
+    name: 'Sidebar'
+    api: { 'html': '<aside> + <nav>', 'aria': 'complementary' }
+prompt:
+  keywords: ['sidebar', 'side navigation', 'navigation split view']
+  descriptors: ['vertical list of sections on the left', 'selected item highlighted']
+  avoid: ['drawer']
+  coding: null
+  image: null
+status: draft

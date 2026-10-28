@@ -5,7 +5,7 @@ aliases: [menu button, dropdown menu, actions menu, 更多選單, 動作選單]
 describe:
   - 按鈕點開是一串動作，按鈕上的字不會變
   - 「更多」按鈕點開的指令清單
-category: menus
+category: actions
 confusedWith: [popup-select, context-menu]
 platforms:
   macos:

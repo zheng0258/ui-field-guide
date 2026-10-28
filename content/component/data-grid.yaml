@@ -1,0 +1,20 @@
+id: data-grid
+kind: component
+name: { en: 'Data grid', zh: '資料格' }
+aliases: ['grid', 'spreadsheet', '資料表格']
+describe:
+  - '像試算表一樣，可以用方向鍵一格一格移動、排序'
+category: data
+confusedWith: ['table', 'treegrid']
+platforms:
+  web:
+    name: 'Data grid'
+    api: { 'html': '<table> + JavaScript', 'aria': 'grid' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/grid/
+prompt:
+  keywords: ['data grid', 'APG grid pattern', 'role grid']
+  descriptors: ['arrow key cell navigation', 'sortable headers']
+  avoid: ['table']
+  coding: null
+  image: null
+status: draft

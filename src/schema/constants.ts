@@ -19,3 +19,31 @@ export const GUIDELINE_HOSTS = [
   'www.w3.org',
   'w3.org',
 ] as const
+
+/** Platform-neutral groupings, in the order platform pages list them. */
+export const CATEGORIES = [
+  'actions',
+  'navigation',
+  'disclosure',
+  'overlays',
+  'input',
+  'data',
+  'status',
+  'containers',
+] as const
+export type Category = (typeof CATEGORIES)[number]
+
+export const CATEGORY_LABELS: Record<Category, string> = {
+  actions: '動作',
+  navigation: '導覽',
+  disclosure: '展開收合',
+  overlays: '覆蓋層',
+  input: '輸入',
+  data: '資料',
+  status: '狀態',
+  containers: '容器',
+}
+
+export function isPlatform(value: unknown): value is Platform {
+  return typeof value === 'string' && (PLATFORMS as readonly string[]).includes(value)
+}

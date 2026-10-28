@@ -1,0 +1,28 @@
+id: table
+kind: component
+name: { en: 'Table', zh: '表格' }
+aliases: ['data table', '表格視圖']
+describe:
+  - '一列一列的資料，有欄位標題'
+category: data
+confusedWith: ['data-grid', 'listbox']
+platforms:
+  macos:
+    name: 'Table view'
+    api: { 'appkit': 'NSTableView', 'swiftui': 'Table' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/lists-and-tables
+  ios:
+    name: 'List'
+    api: { 'uikit': 'UITableView', 'swiftui': 'List' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/lists-and-tables
+  web:
+    name: 'Table'
+    api: { 'html': '<table>', 'aria': 'table' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/table/
+prompt:
+  keywords: ['table', 'HTML table with caption and th scope']
+  descriptors: ['header row', 'zebra striped rows']
+  avoid: ['data-grid']
+  coding: null
+  image: null
+status: draft

@@ -6,7 +6,7 @@ const componentData = (overrides: Record<string, unknown> = {}) => ({
   id: 'popup-select',
   kind: 'component',
   name: { en: 'Pop-up select', zh: '彈出式選擇' },
-  category: 'selection',
+  category: 'input',
   platforms: {
     macos: { name: 'Pop-up button', api: { appkit: 'NSPopUpButton' } },
   },

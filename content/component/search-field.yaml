@@ -5,8 +5,8 @@ aliases: [search bar, search box, 搜尋框]
 describe:
   - 前面有放大鏡圖示、可以打字搜尋的欄位
   - 打字後右邊會出現清除按鈕
-category: text-input
-confusedWith: [combobox]
+category: input
+confusedWith: [combobox, text-field]
 platforms:
   macos:
     name: Search field
@@ -23,7 +23,7 @@ platforms:
     api: { compose: SearchBar, view: com.google.android.material.search.SearchBar }
     guideline: https://m3.material.io/components/search/overview
   web:
-    name: Search input
+    name: Search
     api: { html: '<input type="search"> in <search>', aria: 'searchbox + search landmark' }
     guideline: https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/search.html
 prompt:

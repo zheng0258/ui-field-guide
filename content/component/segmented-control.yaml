@@ -5,8 +5,8 @@ aliases: [segmented button, button group, toggle group, 分段按鈕]
 describe:
   - 幾顆並排黏在一起的按鈕，一次選一個
   - 一條橫向膠囊切成好幾格，選中的那格會反白
-category: selection
-confusedWith: [popup-select, toggle-switch]
+category: input
+confusedWith: [popup-select, toggle-switch, tabs, radio-group]
 platforms:
   macos:
     name: Segmented control
@@ -22,8 +22,8 @@ platforms:
     api: { compose: SingleChoiceSegmentedButtonRow, view: MaterialButtonToggleGroup }
     guideline: https://m3.material.io/components/segmented-buttons/overview
   web:
-    name: Radio group
-    api: { html: '<fieldset> + <input type="radio">', aria: radiogroup }
+    name: Segmented control
+    api: { html: 'radio group styled as joined buttons', aria: radiogroup }
     guideline: https://www.w3.org/WAI/ARIA/apg/patterns/radio/
 prompt:
   keywords: [segmented control, NSSegmentedControl, SwiftUI Picker segmented style]

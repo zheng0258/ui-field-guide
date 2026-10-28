@@ -367,6 +367,219 @@ select {
   overflow-wrap: anywhere;
 }
 
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.result-platform {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.platform-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.platform-tile {
+  display: grid;
+  gap: 4px;
+  height: 100%;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+}
+
+.platform-tile:hover {
+  border-color: var(--accent);
+}
+
+.platform-tile-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.platform-tile-blurb {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.platform-tile-meta {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.category-jump {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 6px;
+  margin: 0 calc(-1 * var(--gutter));
+  padding: 8px var(--gutter);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.category-jump a {
+  flex: none;
+  padding: 2px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: inherit;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.category-jump span {
+  color: var(--text-muted);
+}
+
+.category {
+  scroll-margin-top: 56px;
+}
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(calc(50% - 7px), 200px), 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.component-card {
+  display: grid;
+  gap: 2px;
+  height: 100%;
+  padding: 8px 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+}
+
+.component-card:hover {
+  border-color: var(--accent);
+}
+
+.component-card-name {
+  margin-top: 6px;
+  padding: 0 4px;
+  font-weight: 600;
+}
+
+.component-card-zh {
+  padding: 0 4px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Thumbnails: the live demo markup, zoomed out, inert and clipped to a fixed frame. */
+.demo-thumb {
+  container-type: inline-size;
+  display: grid;
+  place-items: center;
+  height: 132px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.demo-thumb-stage {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  zoom: 0.52;
+  pointer-events: none;
+}
+
+/* Demos are designed up to ~360px wide; zoom out further when the card is narrow (phones). */
+@container (max-width: 185px) {
+  .demo-thumb-stage {
+    zoom: 0.44;
+  }
+}
+
+.demo-thumb-empty {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(-45deg, transparent 0 8px, var(--border) 8px 9px);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.demo-thumb-empty span {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.demo-stage {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.demo-live {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: 32px var(--gutter);
+  overflow-x: auto;
+}
+
+.demo-source {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.demo-source summary {
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.demo-source pre {
+  margin: 0;
+  padding: 0 14px 14px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+.demo-missing {
+  padding: 24px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.platform-card.current {
+  border-color: var(--accent);
+  border-width: 2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

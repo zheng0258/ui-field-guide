@@ -1,0 +1,20 @@
+id: listbox
+kind: component
+name: { en: 'Listbox', zh: '清單選擇' }
+aliases: ['multi-select', 'list box', '多選清單']
+describe:
+  - '直接攤開在畫面上的選項清單，可以選一個或多個'
+category: input
+confusedWith: ['combobox', 'popup-select']
+platforms:
+  web:
+    name: 'Listbox'
+    api: { 'html': '<select multiple>', 'aria': 'listbox + option' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/listbox/
+prompt:
+  keywords: ['listbox', 'APG listbox pattern', 'select multiple']
+  descriptors: ['always-visible list of options', 'selected options highlighted']
+  avoid: ['popup-select']
+  coding: null
+  image: null
+status: draft

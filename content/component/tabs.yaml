@@ -1,0 +1,28 @@
+id: tabs
+kind: component
+name: { en: 'Tabs', zh: '分頁標籤' }
+aliases: ['tab bar', 'tab view', '頁籤']
+describe:
+  - '一排標籤，點哪個就顯示哪一頁的內容'
+category: navigation
+confusedWith: ['segmented-control', 'navigation']
+platforms:
+  macos:
+    name: 'Tab view'
+    api: { 'appkit': 'NSTabView', 'swiftui': 'TabView' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/tab-views
+  android:
+    name: 'Tabs'
+    api: { 'compose': 'PrimaryTabRow + Tab', 'view': 'TabLayout' }
+    guideline: https://m3.material.io/components/tabs/overview
+  web:
+    name: 'Tabs'
+    api: { 'aria': 'tablist + tab + tabpanel' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
+prompt:
+  keywords: ['tabs', 'APG tabs pattern', 'tablist tab tabpanel']
+  descriptors: ['arrow keys switch tabs', 'only active panel visible']
+  avoid: ['segmented-control']
+  coding: null
+  image: null
+status: draft

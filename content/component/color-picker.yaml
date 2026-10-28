@@ -1,0 +1,27 @@
+id: color-picker
+kind: component
+name: { en: 'Color picker', zh: '顏色選擇器' }
+aliases: ['color well', 'swatch', '選色器']
+describe:
+  - '點了會出現調色盤，用來挑顏色'
+category: input
+confusedWith: []
+platforms:
+  macos:
+    name: 'Color well'
+    api: { 'appkit': 'NSColorWell', 'swiftui': 'ColorPicker' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/color-wells
+  ios:
+    name: 'Color picker'
+    api: { 'uikit': 'UIColorPickerViewController', 'swiftui': 'ColorPicker' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/color-wells
+  web:
+    name: 'Color picker'
+    api: { 'html': '<input type="color">' }
+prompt:
+  keywords: ['color picker', 'HTML input type color', 'color well']
+  descriptors: ['swatch showing current color', 'opens system color panel']
+  avoid: []
+  coding: null
+  image: null
+status: draft

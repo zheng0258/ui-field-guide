@@ -1,0 +1,20 @@
+id: navigation
+kind: component
+name: { en: 'Navigation', zh: '導覽列' }
+aliases: ['navbar', 'header nav', '導航列']
+describe:
+  - '網站最上面那排頁面連結'
+category: navigation
+confusedWith: ['pull-down-menu', 'tabs']
+platforms:
+  web:
+    name: 'Navigation'
+    api: { 'html': '<nav>', 'aria': 'navigation landmark' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/
+prompt:
+  keywords: ['site navigation bar', 'nav landmark']
+  descriptors: ['horizontal list of page links', 'current page highlighted with aria-current']
+  avoid: ['pull-down-menu']
+  coding: null
+  image: null
+status: draft

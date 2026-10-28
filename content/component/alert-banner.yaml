@@ -1,0 +1,20 @@
+id: alert-banner
+kind: component
+name: { en: 'Alert banner', zh: '警示橫幅' }
+aliases: ['callout', 'notice', 'banner', '提示橫幅']
+describe:
+  - '頁面上一條顯眼的訊息框，例如「付款失敗」'
+category: status
+confusedWith: ['toast', 'alert-dialog']
+platforms:
+  web:
+    name: 'Alert'
+    api: { 'aria': 'alert' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/alert/
+prompt:
+  keywords: ['alert banner', 'APG alert pattern', 'role alert']
+  descriptors: ['colored bar with icon and message', 'stays in page flow']
+  avoid: ['toast']
+  coding: null
+  image: null
+status: draft

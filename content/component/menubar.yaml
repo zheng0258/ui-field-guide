@@ -1,0 +1,24 @@
+id: menubar
+kind: component
+name: { en: 'Menubar', zh: '選單列' }
+aliases: ['menu bar', 'mega menu', '功能表列']
+describe:
+  - '最上面一排「檔案、編輯、顯示」的選單'
+category: navigation
+confusedWith: ['navigation', 'toolbar']
+platforms:
+  macos:
+    name: 'Menu bar'
+    api: { 'appkit': 'NSApplication.mainMenu', 'swiftui': '.commands' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/the-menu-bar
+  web:
+    name: 'Menubar'
+    api: { 'aria': 'menubar + menu + menuitem' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/menubar/
+prompt:
+  keywords: ['menubar', 'APG menubar pattern', 'application menu bar']
+  descriptors: ['File Edit View menus', 'submenus open on arrow keys']
+  avoid: ['navigation']
+  coding: null
+  image: null
+status: draft

@@ -1,0 +1,32 @@
+id: toolbar
+kind: component
+name: { en: 'Toolbar', zh: '工具列' }
+aliases: ['action bar', '工具欄']
+describe:
+  - '一排圖示按鈕，放常用動作'
+category: actions
+confusedWith: ['navigation']
+platforms:
+  macos:
+    name: 'Toolbar'
+    api: { 'appkit': 'NSToolbar', 'swiftui': '.toolbar' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/toolbars
+  ios:
+    name: 'Toolbar'
+    api: { 'uikit': 'UIToolbar', 'swiftui': '.toolbar' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/toolbars
+  android:
+    name: 'Bottom app bar'
+    api: { 'compose': 'BottomAppBar', 'view': 'BottomAppBar' }
+    guideline: https://m3.material.io/components/bottom-app-bar/overview
+  web:
+    name: 'Toolbar'
+    api: { 'html': '<div role="toolbar">', 'aria': 'toolbar' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/
+prompt:
+  keywords: ['toolbar', 'APG toolbar pattern', 'role toolbar']
+  descriptors: ['row of icon buttons', 'arrow keys move focus between controls']
+  avoid: []
+  coding: null
+  image: null
+status: draft

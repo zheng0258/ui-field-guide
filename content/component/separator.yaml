@@ -1,0 +1,29 @@
+id: separator
+kind: component
+name: { en: 'Separator', zh: '分隔線' }
+aliases: ['divider', 'rule', '分隔']
+describe:
+  - '一條細線，把上下兩塊內容分開'
+category: containers
+confusedWith: []
+platforms:
+  macos:
+    name: 'Separator'
+    api: { 'appkit': 'NSBox (separator)', 'swiftui': 'Divider' }
+  ios:
+    name: 'Divider'
+    api: { 'swiftui': 'Divider' }
+  android:
+    name: 'Divider'
+    api: { 'compose': 'HorizontalDivider', 'view': 'MaterialDivider' }
+    guideline: https://m3.material.io/components/divider/overview
+  web:
+    name: 'Separator'
+    api: { 'html': '<hr>', 'aria': 'separator' }
+prompt:
+  keywords: ['separator', 'HTML hr element', 'divider line']
+  descriptors: ['thin horizontal line', 'low contrast']
+  avoid: []
+  coding: null
+  image: null
+status: draft

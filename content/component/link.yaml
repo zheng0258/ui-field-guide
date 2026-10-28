@@ -1,0 +1,20 @@
+id: link
+kind: component
+name: { en: 'Link', zh: '連結' }
+aliases: ['hyperlink', 'anchor', '超連結']
+describe:
+  - '點了會跳到另一頁或另一個位置的文字'
+category: actions
+confusedWith: ['button']
+platforms:
+  web:
+    name: 'Link'
+    api: { 'html': '<a href>', 'aria': 'link' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/link/
+prompt:
+  keywords: ['link', 'HTML anchor element']
+  descriptors: ['underlined text', 'navigates to a URL']
+  avoid: ['button']
+  coding: null
+  image: null
+status: draft

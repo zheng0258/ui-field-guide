@@ -1,0 +1,31 @@
+id: progress-indicator
+kind: component
+name: { en: 'Progress bar', zh: '進度條' }
+aliases: ['progress', 'loading bar', '進度']
+describe:
+  - '一條慢慢填滿的橫條，表示完成多少'
+category: status
+confusedWith: ['meter', 'spinner']
+platforms:
+  macos:
+    name: 'Progress indicator'
+    api: { 'appkit': 'NSProgressIndicator', 'swiftui': 'ProgressView(value:)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/progress-indicators
+  ios:
+    name: 'Progress view'
+    api: { 'uikit': 'UIProgressView', 'swiftui': 'ProgressView(value:)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/progress-indicators
+  android:
+    name: 'Progress indicator'
+    api: { 'compose': 'LinearProgressIndicator', 'view': 'LinearProgressIndicator' }
+    guideline: https://m3.material.io/components/progress-indicators/overview
+  web:
+    name: 'Progress bar'
+    api: { 'html': '<progress>', 'aria': 'progressbar' }
+prompt:
+  keywords: ['progress bar', 'HTML progress element']
+  descriptors: ['horizontal bar filling left to right', 'percentage label']
+  avoid: ['meter']
+  coding: null
+  image: null
+status: draft

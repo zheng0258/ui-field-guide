@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig, type Plugin } from 'vite'
 import { CONTENT_DIR, readContentFiles } from './src/content/fs'
 import { formatIssues, validateContent } from './src/content/validate'
-import type { Concept } from './src/schema'
+import { PLATFORMS, type Concept } from './src/schema'
 
 const VIRTUAL_ID = 'virtual:content'
 const RESOLVED_ID = `\0${VIRTUAL_ID}`
@@ -45,11 +45,16 @@ export default defineConfig(({ command }) => {
       script: 'async',
       formatting: 'minify',
       dirStyle: 'nested',
-      // One static page per published concept; the catch-all route becomes the host's 404 page.
+      // One static page per platform and per platform × published concept; the catch-all route becomes the host's 404 page.
       includedRoutes: () => {
         const { concepts } = validateContent(readContentFiles())
-        const ids = publishedConcepts(concepts, includeDrafts).map((concept) => `/c/${concept.id}`)
-        return ['/', ...ids, '/404']
+        const published = publishedConcepts(concepts, includeDrafts)
+        const componentPaths = PLATFORMS.flatMap((platform) =>
+          published.flatMap((concept) =>
+            'platforms' in concept && concept.platforms?.[platform] ? [`/${platform}/${concept.id}`] : [],
+          ),
+        )
+        return ['/', ...PLATFORMS.map((platform) => `/${platform}`), ...componentPaths, '/404']
       },
       onFinished: () => {
         const dist = join(import.meta.dirname, 'dist')

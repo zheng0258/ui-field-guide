@@ -5,8 +5,8 @@ aliases: [autocomplete, typeahead, editable dropdown, 自動完成, 可輸入下
 describe:
   - 可以打字也可以從清單挑的輸入框
   - 邊打字邊跳出建議選項
-category: selection
-confusedWith: [popup-select, search-field]
+category: input
+confusedWith: [popup-select, search-field, listbox]
 platforms:
   macos:
     name: Combo box

@@ -1,0 +1,28 @@
+id: meter
+kind: component
+name: { en: 'Meter', zh: '量表' }
+aliases: ['gauge', 'level indicator', '儀表']
+describe:
+  - '顯示一個量落在範圍哪裡，例如硬碟用了多少'
+category: status
+confusedWith: ['progress-indicator']
+platforms:
+  macos:
+    name: 'Level indicator'
+    api: { 'appkit': 'NSLevelIndicator' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/gauges
+  ios:
+    name: 'Gauge'
+    api: { 'swiftui': 'Gauge' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/gauges
+  web:
+    name: 'Meter'
+    api: { 'html': '<meter>', 'aria': 'meter' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/meter/
+prompt:
+  keywords: ['meter', 'HTML meter element', 'gauge']
+  descriptors: ['value within a known range', 'color changes past thresholds']
+  avoid: ['progress-indicator']
+  coding: null
+  image: null
+status: draft

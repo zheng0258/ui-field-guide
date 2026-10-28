@@ -1,0 +1,22 @@
+id: skeleton
+kind: component
+name: { en: 'Skeleton', zh: '骨架屏' }
+aliases: ['placeholder', 'shimmer', '載入佔位']
+describe:
+  - '內容還沒載入前先顯示的灰色方塊'
+category: status
+confusedWith: ['spinner']
+platforms:
+  ios:
+    name: 'Redacted placeholder'
+    api: { 'swiftui': '.redacted(reason: .placeholder)' }
+  web:
+    name: 'Skeleton'
+    api: { 'aria': 'aria-busy="true"' }
+prompt:
+  keywords: ['skeleton loader', 'shimmer placeholder', 'aria-busy']
+  descriptors: ['gray blocks matching content layout', 'shimmer animation']
+  avoid: ['spinner']
+  coding: null
+  image: null
+status: draft

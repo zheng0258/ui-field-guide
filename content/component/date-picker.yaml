@@ -1,0 +1,32 @@
+id: date-picker
+kind: component
+name: { en: 'Date picker', zh: '日期選擇器' }
+aliases: ['calendar', '日曆', '選日期']
+describe:
+  - '點開會出現月曆，用來挑日期'
+category: input
+confusedWith: ['text-field']
+platforms:
+  macos:
+    name: 'Date picker'
+    api: { 'appkit': 'NSDatePicker', 'swiftui': 'DatePicker' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/pickers
+  ios:
+    name: 'Date picker'
+    api: { 'uikit': 'UIDatePicker', 'swiftui': 'DatePicker' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/pickers
+  android:
+    name: 'Date picker'
+    api: { 'compose': 'DatePicker', 'view': 'MaterialDatePicker' }
+    guideline: https://m3.material.io/components/date-pickers/overview
+  web:
+    name: 'Date picker'
+    api: { 'html': '<input type="date">', 'aria': 'dialog + grid' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/
+prompt:
+  keywords: ['date picker', 'HTML input type date', 'calendar grid']
+  descriptors: ['month grid', 'today highlighted']
+  avoid: []
+  coding: null
+  image: null
+status: draft

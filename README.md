@@ -7,6 +7,10 @@ names — macOS, iOS, Android and Web — plus a ready-to-copy prompt for coding
 
 ## How it works
 
+- Pick a platform, then find the component by its thumbnail: `/web` → `/web/modal-dialog`.
+  Each page has a live demo with its HTML source, the names on all four platforms, and a prompt.
+  Web has all ~45 components with demos; macOS, iOS and Android list names and APIs, demos next.
+
 - Every concept is one YAML file in `content/<kind>/<id>.yaml`, validated by a Zod discriminated union
   (`src/schema/`). Broken cross-references fail CI.
 - Each concept is prerendered to its own static page with `vite-ssg`; search (Chinese, English,

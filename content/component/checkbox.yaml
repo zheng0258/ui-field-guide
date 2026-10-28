@@ -1,0 +1,28 @@
+id: checkbox
+kind: component
+name: { en: 'Checkbox', zh: '核取方塊' }
+aliases: ['check box', 'tick box', '勾選框']
+describe:
+  - '一個小方框，點了會打勾'
+category: input
+confusedWith: ['toggle-switch', 'radio-group']
+platforms:
+  macos:
+    name: 'Checkbox'
+    api: { 'appkit': 'NSButton (checkbox)', 'swiftui': 'Toggle(.checkbox)' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/toggles
+  android:
+    name: 'Checkbox'
+    api: { 'compose': 'Checkbox', 'view': 'MaterialCheckBox' }
+    guideline: https://m3.material.io/components/checkbox/overview
+  web:
+    name: 'Checkbox'
+    api: { 'html': '<input type="checkbox">', 'aria': 'checkbox' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/
+prompt:
+  keywords: ['checkbox', 'HTML input checkbox']
+  descriptors: ['square box with a check mark', 'label next to the box']
+  avoid: ['toggle-switch']
+  coding: null
+  image: null
+status: draft

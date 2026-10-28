@@ -5,8 +5,8 @@ aliases: [toggle, on/off switch, 切換開關, 撥動開關]
 describe:
   - 左右撥動的開關，切換開或關
   - 一個膠囊形狀，裡面圓點會滑到另一邊
-category: selection
-confusedWith: [segmented-control]
+category: input
+confusedWith: [segmented-control, checkbox]
 platforms:
   macos:
     name: Switch

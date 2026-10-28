@@ -18,7 +18,8 @@
 | 資料單位 | 平台中立的「概念」，底下列各平台實作 | 一頁並列四平台；某平台沒有也是有用資訊 |
 | 類別 | 組件、風格、模式與效果，三大類分開 | 欄位與示範方式差異大；搜尋與資料基礎共用 |
 | AI prompt | 每條目含 `prompt` 欄位，coding 版必填、image 版選填（風格必填） | 讓使用者一鍵複製給 coding agent 或圖像生成 |
-| 開發順序 | macOS → iOS → Android；Web 欄從第一天就填 | Apple 兩平台共用詞彙與 token；Web 是大家最熟的參照 |
+| 開發順序 | macOS → iOS → Android；Web 欄從第一天就填（2026-10-28 調整：示範先做 Web，見 `docs/decisions/0002`） | Apple 兩平台共用詞彙與 token；Web 是大家最熟的參照 |
+| 使用流程 | 平台 → 組件：先選平台，再從縮圖找組件（2026-10-28 新增，見 `docs/decisions/0002`） | 使用者通常知道自己在看哪個平台，且是先「看到」才知道名字 |
 | 部署形式 | 純靜態網站，無後端 | 資料是版本控管的 YAML |
 
 ## 範圍
@@ -117,7 +118,7 @@ Disclosure control、Table view、Outline view、Button、Context menu、Menu、
 
 目標是把地基做完：資料能驗證、token 能產生、網站能自動部署，還不做漂亮的示範。依序執行，前一項是後一項的前提。
 
-- [ ] 確認 GitHub repo、npm 套件名與網域可用，建立 `ui-field-guide` repo（MIT）
+- [x] 確認 GitHub repo、npm 套件名與網域可用，建立 `ui-field-guide` repo（MIT）
 - [x] 初始化 pnpm + Vite + Vue 3 + TypeScript，加 ESLint、Prettier、commitlint
 - [x] 比較 VitePress 與 `vite-ssg`（各做一頁概念頁），定案預渲染方案
 - [x] 寫 Zod schema（`src/schema`），涵蓋 component、style、pattern 三種 `kind`
@@ -128,7 +129,7 @@ Disclosure control、Table view、Outline view、Button、Context menu、Menu、
 - [x] 做出概念頁骨架：四平台名稱並列、API 表、易混淆連結、prompt 複製按鈕（先無示範）
 - [x] 接上搜尋（中英文、別名、白話描述）
 - [x] GitHub Actions：lint、typecheck、schema 測試、建置、部署；PR 產生 preview
-- [ ] 從研究文件匯出 Markdown 放入 `docs/`，加上 `CLAUDE.md`（handoff 與 CLAUDE.md 已完成，其餘見 [docs/README.md](README.md)）
+- [x] 從研究文件匯出 Markdown 放入 `docs/`，加上 `CLAUDE.md`
 
 ### 驗收條件
 

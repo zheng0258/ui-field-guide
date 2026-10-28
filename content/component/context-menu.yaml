@@ -5,7 +5,7 @@ aliases: [right-click menu, shortcut menu, long-press menu, 右鍵選單, 長按
 describe:
   - 按右鍵或長按才會跳出來的選單
   - 針對你點的那個東西列出能做的事
-category: menus
+category: overlays
 confusedWith: [pull-down-menu]
 platforms:
   macos:

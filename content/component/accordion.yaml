@@ -1,0 +1,20 @@
+id: accordion
+kind: component
+name: { en: 'Accordion', zh: '手風琴' }
+aliases: ['collapse', 'expander', '摺疊面板']
+describe:
+  - '好幾段標題，一次只展開其中一段'
+category: disclosure
+confusedWith: ['disclosure', 'tabs']
+platforms:
+  web:
+    name: 'Accordion'
+    api: { 'html': '<details name> group', 'aria': 'button[aria-expanded] + region' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+prompt:
+  keywords: ['accordion', 'details summary with name attribute']
+  descriptors: ['one section open at a time', 'chevron rotates']
+  avoid: ['disclosure']
+  coding: null
+  image: null
+status: draft

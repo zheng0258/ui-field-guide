@@ -1,0 +1,27 @@
+id: toast
+kind: component
+name: { en: 'Toast', zh: '吐司通知' }
+aliases: ['snackbar', 'notification', '通知']
+describe:
+  - '角落跳出一則訊息，幾秒後自己消失'
+category: overlays
+confusedWith: ['alert-banner', 'alert-dialog']
+platforms:
+  macos:
+    name: 'Notification'
+    api: { 'usernotifications': 'UNUserNotificationCenter' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/notifications
+  android:
+    name: 'Snackbar'
+    api: { 'compose': 'Snackbar', 'view': 'Snackbar' }
+    guideline: https://m3.material.io/components/snackbar/overview
+  web:
+    name: 'Toast'
+    api: { 'aria': 'status live region' }
+prompt:
+  keywords: ['toast notification', 'aria-live status region']
+  descriptors: ['auto-dismiss after a few seconds', 'stacked in a corner']
+  avoid: ['alert-dialog']
+  coding: null
+  image: null
+status: draft
