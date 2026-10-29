@@ -21,6 +21,7 @@
   --m-bezel-shadow: 0 0.5px 1px rgb(0 0 0 / 0.18), 0 0 0 0.5px rgb(0 0 0 / 0.08);
   --m-menu: rgb(246 246 246 / 0.86);
   --m-alternate: rgb(0 0 0 / 0.035);
+  --m-sidebar: color-mix(in srgb, var(--m-window) 94%, var(--m-label));
   --m-radius: 6px;
 
   color: var(--m-label);
@@ -142,6 +143,199 @@
 
 .demo-macos .window-body {
   padding: 16px;
+}
+
+/* Window: traffic-light buttons, active vs inactive, stacking */
+.demo-macos .lights-buttons button {
+  display: grid;
+  place-items: center;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ff5f57;
+  color: rgb(0 0 0 / 0.55);
+  font-size: 9px;
+  line-height: 1;
+}
+
+.demo-macos .lights-buttons button:nth-child(2) {
+  background: #febc2e;
+}
+
+.demo-macos .lights-buttons button:nth-child(3) {
+  background: #28c840;
+}
+
+.demo-macos .lights-buttons:is(:hover, :focus-within) button:nth-child(1)::after {
+  content: '×';
+}
+
+.demo-macos .lights-buttons:is(:hover, :focus-within) button:nth-child(2)::after {
+  content: '−';
+}
+
+.demo-macos .lights-buttons:is(:hover, :focus-within) button:nth-child(3)::after {
+  content: '+';
+}
+
+.demo-macos .window[data-active='false'] .lights :is(span, button) {
+  background: var(--macos-color-quaternary-label);
+}
+
+.demo-macos .window[data-active='false'] .window-title {
+  color: var(--m-tertiary);
+}
+
+.demo-macos .window[data-active='false'] {
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.2),
+    0 6px 16px rgb(0 0 0 / 0.12);
+}
+
+.demo-macos .window-stack {
+  display: grid;
+  width: 340px;
+  height: 200px;
+}
+
+.demo-macos .window-stack > .window {
+  grid-area: 1 / 1;
+  width: 260px;
+  height: 150px;
+}
+
+.demo-macos .window-stack > .window:first-child {
+  margin: 0 0 0 80px;
+}
+
+.demo-macos .window-stack > .window:last-child {
+  margin: 50px 0 0;
+}
+
+.demo-macos .window-stack > .window[data-active='true'] {
+  z-index: 1;
+}
+
+/* Scroll view: overlay scroller */
+.demo-macos .scroller {
+  height: 150px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--m-tertiary) transparent;
+}
+
+.demo-macos .scroll-list {
+  margin: 0;
+  padding: 4px 8px;
+  list-style: none;
+}
+
+.demo-macos .scroll-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 5px;
+}
+
+.demo-macos .scroll-list li:nth-child(even) {
+  background: var(--m-alternate);
+}
+
+/* Split view: panes and dividers */
+.demo-macos .splitview {
+  display: flex;
+  height: 150px;
+}
+
+.demo-macos .pane {
+  flex: 0 0 auto;
+  min-width: 0;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.demo-macos .pane p {
+  white-space: nowrap;
+}
+
+.demo-macos .pane-sidebar {
+  background: var(--m-sidebar);
+}
+
+.demo-macos .pane-detail {
+  flex: 1;
+}
+
+.demo-macos .divider {
+  position: relative;
+  flex: none;
+  width: 1px;
+  background: var(--m-separator);
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.demo-macos .divider::before {
+  content: '';
+  position: absolute;
+  inset: 0 -4px;
+}
+
+.demo-macos .divider:focus-visible {
+  outline-offset: 1px;
+}
+
+/* Collection view: icon grid */
+.demo-macos .collection {
+  display: grid;
+  grid-template-columns: repeat(3, 96px);
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--m-content);
+  box-shadow: 0 0 0 0.5px var(--m-bezel-border);
+}
+
+.demo-macos .collection-item {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+}
+
+.demo-macos .collection-item input {
+  position: absolute;
+  opacity: 0;
+}
+
+.demo-macos .collection-item svg {
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.demo-macos .collection-item span {
+  padding: 0 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.demo-macos .collection-item:has(:checked) svg {
+  background: color-mix(in srgb, var(--m-label) 10%, transparent);
+}
+
+.demo-macos .collection-item:has(:checked) span {
+  background: var(--m-selected);
+  color: #fff;
+}
+
+.demo-macos .collection-item:has(:focus-visible) {
+  outline: 3px solid color-mix(in srgb, var(--m-focus) 60%, transparent);
+  border-radius: 6px;
 }
 
 /* Push buttons */
@@ -857,7 +1051,7 @@
 .demo-macos .sidebar {
   width: 150px;
   padding: 8px;
-  background: var(--macos-color-under-page-background);
+  background: var(--m-sidebar);
   border-right: 1px solid var(--m-separator);
 }
 
@@ -1190,8 +1384,6 @@
 }
 
 .demo-macos .box legend {
-  float: left;
-  width: 100%;
   margin-bottom: 8px;
   padding: 0;
   font-weight: 600;

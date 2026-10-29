@@ -1,0 +1,23 @@
+id: collection-view
+kind: component
+name: { en: 'Collection view', zh: '集合視圖' }
+aliases: ['icon view', 'grid view', 'gallery', '格狀檢視', '圖示檢視']
+describe:
+  - '一格一格排好的圖示或縮圖，例如 Finder 的圖示檢視'
+category: data
+confusedWith: ['table', 'card']
+platforms:
+  macos:
+    name: 'Collection view'
+    api: { 'appkit': 'NSCollectionView', 'swiftui': 'LazyVGrid' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/collections
+  web:
+    name: 'Grid gallery'
+    api: { 'html': 'CSS grid of items', 'aria': 'listbox or grid' }
+prompt:
+  keywords: ['collection view', 'NSCollectionView', 'icon grid']
+  descriptors: ['items in a wrapping grid', 'selected item highlighted', 'labels under each icon']
+  avoid: ['table']
+  coding: null
+  image: null
+status: draft

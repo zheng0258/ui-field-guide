@@ -1,0 +1,25 @@
+id: scroll-view
+kind: component
+name: { en: 'Scroll view', zh: '捲動視圖' }
+aliases: ['scroll area', 'scroller', 'scrollbar', '捲軸', '捲動區']
+describe:
+  - '內容比框框大時可以上下捲動的區域'
+  - '捲軸平常隱藏，捲動時才出現'
+category: containers
+confusedWith: ['collection-view', 'table']
+platforms:
+  macos:
+    name: 'Scroll view'
+    api: { 'appkit': 'NSScrollView', 'swiftui': 'ScrollView' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/scroll-views
+  web:
+    name: 'Scroll container'
+    api: { 'html': 'overflow: auto + tabindex="0"', 'aria': 'region with aria-label' }
+prompt:
+  keywords: ['scroll view', 'NSScrollView', 'overlay scrollbar']
+  descriptors:
+    ['content clipped to a frame', 'thin overlay scroller that fades out', 'keyboard scrollable when focused']
+  avoid: []
+  coding: null
+  image: null
+status: draft

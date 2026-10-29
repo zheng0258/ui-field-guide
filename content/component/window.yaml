@@ -1,0 +1,26 @@
+id: window
+kind: component
+name: { en: 'Window', zh: '視窗' }
+aliases: ['app window', 'title bar', 'traffic lights', '視窗標題列', '紅黃綠按鈕']
+describe:
+  - '一個 App 的框框，最上面有紅黃綠三顆圓點和標題'
+  - '點到別的視窗時，紅黃綠會變灰'
+category: containers
+confusedWith: ['modal-dialog', 'split-view']
+platforms:
+  macos:
+    name: 'Window'
+    api: { 'appkit': 'NSWindow + standardWindowButton', 'swiftui': 'WindowGroup / Window' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/windows
+prompt:
+  keywords: ['macOS window', 'NSWindow', 'traffic light window controls']
+  descriptors:
+    [
+      'title bar with red, yellow and green buttons',
+      'controls turn gray when the window is inactive',
+      'rounded corners and soft shadow',
+    ]
+  avoid: ['modal-dialog']
+  coding: null
+  image: null
+status: draft

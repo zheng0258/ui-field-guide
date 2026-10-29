@@ -1,0 +1,25 @@
+id: split-view
+kind: component
+name: { en: 'Split view', zh: '分割視圖' }
+aliases: ['split pane', 'resizable panes', 'divider', '分欄', '可拖曳分隔線']
+describe:
+  - '把視窗切成好幾欄，中間的分隔線可以拖曳調整寬度'
+category: containers
+confusedWith: ['sidebar', 'window']
+platforms:
+  macos:
+    name: 'Split view'
+    api: { 'appkit': 'NSSplitView / NSSplitViewController', 'swiftui': 'HSplitView / NavigationSplitView' }
+    guideline: https://developer.apple.com/design/human-interface-guidelines/split-views
+  web:
+    name: 'Resizable panes'
+    api: { 'html': 'flex panes + focusable divider', 'aria': 'separator with aria-valuenow (window splitter)' }
+    guideline: https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/
+prompt:
+  keywords: ['split view', 'NSSplitView', 'resizable pane divider']
+  descriptors:
+    ['two or three panes side by side', 'draggable divider between panes', 'arrow keys move a focused divider']
+  avoid: ['sidebar']
+  coding: null
+  image: null
+status: draft

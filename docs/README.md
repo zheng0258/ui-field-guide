@@ -8,5 +8,6 @@
 | [platforms/android.md](platforms/android.md) | [Android UI 組件對照](https://claude.ai/artifact/AGvk119bt7eJaPVP43R8Vu) |
 | [platforms/web.md](platforms/web.md) | [Web UI 組件對照](https://claude.ai/artifact/H5x4bSUJQqZi1GzFNuUxW2) |
 | [decisions/](decisions/) | repo 內撰寫 |
+| [analysis/macos-screen-anatomy.md](analysis/macos-screen-anatomy.md) | repo 內撰寫：macOS 畫面元素分層與缺口 |
 
 Markdown 是 Claude Docs 的快照（檔頭註明 rev）；線上文件為準，更新時重新匯出。

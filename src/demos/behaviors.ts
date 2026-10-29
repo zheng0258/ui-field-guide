@@ -309,6 +309,80 @@ function listboxPopovers(root: HTMLElement): Cleanup {
   })
 }
 
+/**
+ * APG window splitter: a focusable `[role="separator"][data-split]` sizes the pane before it.
+ * aria-valuenow is that pane's width in percent of the container; arrows move 5, Home/End jump
+ * to aria-valuemin/max, and dragging follows the pointer.
+ */
+function splitters(root: HTMLElement): Cleanup {
+  const set = (splitter: HTMLElement, value: number) => {
+    const min = Number(splitter.getAttribute('aria-valuemin') ?? 10)
+    const max = Number(splitter.getAttribute('aria-valuemax') ?? 90)
+    const clamped = Math.round(Math.min(max, Math.max(min, value)))
+    splitter.setAttribute('aria-valuenow', String(clamped))
+    const pane = splitter.previousElementSibling as HTMLElement | null
+    if (pane) pane.style.flexBasis = `${clamped}%`
+  }
+  root
+    .querySelectorAll<HTMLElement>('[data-split]')
+    .forEach((splitter) => set(splitter, Number(splitter.getAttribute('aria-valuenow') ?? 30)))
+  const offKey = on(root, 'keydown', (event) => {
+    const splitter = closestIn(root, event.target, '[data-split]')
+    if (!splitter) return
+    const now = Number(splitter.getAttribute('aria-valuenow'))
+    const next = {
+      ArrowLeft: now - 5,
+      ArrowRight: now + 5,
+      Home: Number(splitter.getAttribute('aria-valuemin') ?? 10),
+      End: Number(splitter.getAttribute('aria-valuemax') ?? 90),
+    }[event.key]
+    if (next === undefined) return
+    event.preventDefault()
+    set(splitter, next)
+  })
+  const offDown = on(root, 'pointerdown', (event) => {
+    const splitter = closestIn(root, event.target, '[data-split]')
+    const container = splitter?.parentElement
+    if (!splitter || !container) return
+    event.preventDefault()
+    splitter.focus()
+    splitter.setPointerCapture(event.pointerId)
+    const move = (moveEvent: PointerEvent) => {
+      const rect = container.getBoundingClientRect()
+      const pane = splitter.previousElementSibling as HTMLElement | null
+      const start = pane ? pane.getBoundingClientRect().left - rect.left : 0
+      set(splitter, ((moveEvent.clientX - rect.left - start) / rect.width) * 100)
+    }
+    const up = () => {
+      splitter.removeEventListener('pointermove', move)
+      splitter.removeEventListener('pointerup', up)
+    }
+    splitter.addEventListener('pointermove', move)
+    splitter.addEventListener('pointerup', up)
+  })
+  return () => {
+    offKey()
+    offDown()
+  }
+}
+
+/** Inside `[data-window-stack]`, clicking or focusing a `.window` makes it the active (front) one. */
+function windowStacks(root: HTMLElement): Cleanup {
+  const activate = (target: EventTarget | null) => {
+    const window = closestIn(root, target, '[data-window-stack] > .window')
+    if (!window) return
+    window.parentElement?.querySelectorAll(':scope > .window').forEach((other) => {
+      other.setAttribute('data-active', String(other === window))
+    })
+  }
+  const offDown = on(root, 'pointerdown', (event) => activate(event.target))
+  const offFocus = on(root, 'focusin', (event) => activate(event.target))
+  return () => {
+    offDown()
+    offFocus()
+  }
+}
+
 /** Attaches every behavior to a live demo root; returns one cleanup for unmount. */
 export function mountDemo(root: HTMLElement): Cleanup {
   const cleanups = [
@@ -325,6 +399,8 @@ export function mountDemo(root: HTMLElement): Cleanup {
     rangeFill,
     wheels,
     listboxPopovers,
+    splitters,
+    windowStacks,
   ].map((behavior) => behavior(root))
   return () => cleanups.forEach((cleanup) => cleanup())
 }
